@@ -1,15 +1,15 @@
 /** @jsx jsx */
-import { jsx, Box, Container, Flex, Button } from 'theme-ui';
-import Sticky from 'react-stickynode';
-import { useState } from 'react';
-import { DrawerProvider } from 'contexts/drawer/drawer-provider';
-import NavbarDrawer from './navbar-drawer';
-import Image from 'components/image';
-import Logo from 'components/logo';
-import { NavLink } from 'components/link';
+import { jsx, Box, Container, Flex, Button } from "theme-ui";
+import Sticky from "react-stickynode";
+import { useState } from "react";
+import { DrawerProvider } from "contexts/drawer/drawer-provider";
+import NavbarDrawer from "./navbar-drawer";
+import Image from "components/image";
+import Logo from "components/logo";
+import { NavLink } from "components/link";
 
-import menuItems from './header.data';
-import lock from 'assets/images/icons/lock.png';
+import menuItems from "./header.data";
+import lock from "assets/images/icons/lock.png";
 
 export default function Header() {
   const [state, setState] = useState({
@@ -30,7 +30,7 @@ export default function Header() {
           <Box
             as="header"
             variant="layout.header"
-            className={state.isMobileMenu ? 'is-mobile-menu' : ''}
+            className={state.isMobileMenu ? "is-mobile-menu" : ""}
           >
             <Container>
               <Box sx={styles.headerInner}>
@@ -38,12 +38,12 @@ export default function Header() {
                 <Flex
                   as="nav"
                   sx={styles.navbar}
-                  className={state.isMobileMenu ? 'navbar active' : 'navbar'}
+                  className={state.isMobileMenu ? "navbar active" : "navbar"}
                 >
                   <Box
                     as="ul"
                     sx={styles.navList}
-                    className={state.isMobileMenu ? 'active' : ''}
+                    className={state.isMobileMenu ? "active" : ""}
                   >
                     {menuItems.map(({ path, label }, i) => (
                       <li key={i}>
@@ -61,7 +61,7 @@ export default function Header() {
                     <Image src={lock} alt="lock icon" />
                     Login
                   </button>
-                  <Button variant="text" sx={styles.getStarted}>
+                  <Button variant="primary" sx={styles.getStarted}>
                     Get Started
                   </Button>
                 </Flex>
@@ -77,85 +77,85 @@ export default function Header() {
 
 const styles = {
   headerWrapper: {
-    backgroundColor: 'transparent',
+    backgroundColor: "transparent",
     header: {
-      position: 'fixed',
+      position: "fixed",
       left: 0,
       right: 0,
       py: [4],
-      transition: 'all 0.3s ease-in-out 0s',
-      '&.is-mobile-menu': {
-        backgroundColor: 'white',
+      transition: "all 0.3s ease-in-out 0s",
+      "&.is-mobile-menu": {
+        backgroundColor: "white",
       },
     },
-    '.is-sticky': {
+    ".is-sticky": {
       header: {
-        backgroundColor: 'white',
-        py: ['13px'],
-        boxShadow: '0 6px 13px rgba(38,78,118,0.1)',
+        backgroundColor: "white",
+        py: ["13px"],
+        boxShadow: "0 6px 13px rgba(38,78,118,0.1)",
       },
     },
   },
   headerInner: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
     // position: ['relative', null, null, 'static'],
   },
   logo: {
     mr: [null, null, null, null, 30, 12],
   },
   navbar: {
-    display: ['none', null, null, null, 'flex'],
-    alignItems: 'center',
+    display: ["none", null, null, null, "flex"],
+    alignItems: "center",
     flexGrow: 1,
     // justifyContent: 'center',
     li: {
-      display: 'flex',
-      alignItems: 'center',
+      display: "flex",
+      alignItems: "center",
       a: {
-        cursor: 'pointer',
-        transition: 'all 0.3s ease-in-out 0s',
+        cursor: "pointer",
+        transition: "all 0.3s ease-in-out 0s",
       },
     },
   },
   navList: {
-    display: ['flex'],
-    listStyle: 'none',
+    display: ["flex"],
+    listStyle: "none",
     flexGrow: 1,
     p: 0,
-    '.nav-item': {
-      cursor: 'pointer',
+    ".nav-item": {
+      cursor: "pointer",
       fontWeight: 400,
       padding: 0,
-      margin: [null, null, null, null, '0 15px'],
+      margin: [null, null, null, null, "0 15px"],
     },
-    '.active': {
-      color: 'primary',
+    ".active": {
+      color: "primary",
     },
   },
   getStarted: {
-    backgroundColor: '#FFF0D7',
-    color: '#E6A740',
-    p: ['0 16px'],
-    minHeight: 45,
+    backgroundColor: "primary",
+    color: "textSecondary",
     ml: [6],
-    display: ['none', null, null, null, 'flex'],
+    minHeight: ["40px", "40px", "40px", "40px", "40px", "50px"],
+    padding: ["0 25px", "0 25px", "0 25px", "0 30px"],
+    display: ["none", null, null, null, "flex"],
   },
   login: {
-    backgroundColor: 'transparent',
-    position: ['absolute', null, null, null, 'static'],
-    color: 'text',
+    backgroundColor: "transparent",
+    position: ["absolute", null, null, null, "static"],
+    color: "text",
     fontSize: [2],
     fontWeight: 500,
-    top: '50%',
+    top: "50%",
     p: 0,
-    transform: ['translateY(-50%)', null, null, null, 'none'],
+    transform: ["translateY(-50%)", null, null, null, "none"],
     right: 79,
     border: 0,
-    fontFamily: 'body',
-    display: 'flex',
-    alignItems: 'center',
+    fontFamily: "body",
+    display: "flex",
+    alignItems: "center",
     outline: 0,
     img: {
       maxWidth: 14,
@@ -163,19 +163,19 @@ const styles = {
     },
   },
   menuButton: {
-    position: 'relative',
-    right: '-6px',
+    position: "relative",
+    right: "-6px",
     p: 0,
   },
   closeButton: {
-    height: '32px',
-    padding: '0',
-    minHeight: 'auto',
-    width: '32px',
-    position: 'relative',
-    right: '-10px',
+    height: "32px",
+    padding: "0",
+    minHeight: "auto",
+    width: "32px",
+    position: "relative",
+    right: "-10px",
     path: {
-      stroke: 'text',
+      stroke: "text",
     },
   },
 };

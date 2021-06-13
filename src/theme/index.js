@@ -9,10 +9,11 @@ export default {
     backgroundSecondary: "#121420", // secondary background color
     borderColor: "#F3F4F5", // border color
     primary: "#8100d1", // primary button and link color
-    secondary: "#e7e247", // secondary color - can be used for hover states
+    secondary: "#353448", // secondary color - can be used for hover states
     muted: "#7B8188", // muted color
     accent: "#8100d1", // a contrast color for emphasizing UI
-    dark: "#10132D",
+
+    hover: "#9600ff",
     link: "#4F96FF", // default link color
 
     // highlight	a background color for highlighting text
@@ -198,7 +199,7 @@ export default {
       minHeight: ["50px", "50px", "50px", "50px", "50px", "60px"],
       padding: ["0 25px", "0 25px", "0 25px", "0 30px"],
       "&:hover": {
-        bg: "dark",
+        bg: "hover",
       },
     },
     primaryMd: {
@@ -206,6 +207,7 @@ export default {
       minHeight: "50px",
       px: "25px",
     },
+
     secondary: {
       variant: "buttons.primary",
       color: "white",
@@ -215,10 +217,6 @@ export default {
       variant: "buttons.default",
       backgroundColor: "#EDF0F2",
       color: "text",
-      ":hover": {
-        backgroundColor: "primary",
-        color: "#fff",
-      },
     },
     white: {
       variant: "buttons.default",
