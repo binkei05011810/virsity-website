@@ -18,6 +18,7 @@
     "rc-drawer": "^4.1.0",
     "rc-tabs": "^11.7.2",
     "react": "^16.13.1",
+    "react-countdown": "^2.3.2",
     "react-dom": "^16.13.1",
     "react-ga": "^3.3.0",
     "react-icons": "^4.1.0",

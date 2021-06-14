@@ -4,12 +4,22 @@ import { rgba } from "polished";
 import Image from "components/image";
 import SubscriptionForm from "components/subscription-form";
 import illustration from "assets/images/banner.svg";
-import ignite from "assets/images/ignite.png";
+import paypal from "assets/images/paypal.png";
+import google from "assets/images/google.png";
+import dropbox from "assets/images/dropbox.png";
 
 const logos = [
   {
-    name: "Ignite",
-    src: ignite,
+    name: "Paypal",
+    src: paypal,
+  },
+  {
+    name: "Google",
+    src: google,
+  },
+  {
+    name: "Dropbox",
+    src: dropbox,
   },
 ];
 
@@ -131,7 +141,7 @@ const styles = {
     figure: {
       ml: [2, null, null, null, 4, 5],
       img: {
-        maxWidth: ["60px", null, null, null, "60px", "60px"],
+        maxWidth: ["60px", null, null, null, "80px", "100%"],
       },
     },
   },

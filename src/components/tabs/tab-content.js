@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Heading, Text, Button } from 'theme-ui';
+import { jsx, Box, Heading, Text, Button } from "theme-ui";
 
 const TabContent = ({ tabContent }) => {
   return tabContent.map((item, index) => (
@@ -20,20 +20,20 @@ export default TabContent;
 
 const styles = {
   tabContent: {
-    display: ['flex'],
-    flexDirection: ['column-reverse', null, null, null, 'row'],
-    alignItems: 'flex-start',
+    display: ["flex"],
+    flexDirection: ["column-reverse", null, null, null, "row"],
+    alignItems: "flex-start",
   },
   content: {
     maxWidth: [480, null, null, 580, 480],
-    ml: [null, null, null, 'auto', 'unset'],
-    mr: [0, null, null, 'auto', 10, 8, 10],
-    textAlign: [null, null, null, 'center', 'left'],
+    ml: [null, null, null, "auto", "unset"],
+    mr: [0, null, null, "auto", 10, 8, 10],
+    textAlign: [null, null, null, "center", "left"],
     h2: {
       fontWeight: 700,
       fontSize: [6, null, null, 10],
       lineHeight: 1.5,
-      letterSpacing: 'heading',
+      letterSpacing: "heading",
     },
     p: {
       fontSize: [1, null, null, 2],
@@ -45,13 +45,13 @@ const styles = {
     },
   },
   illustration: {
-    alignItems: 'flex-start',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
+    alignItems: "flex-start",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
     borderRadius: [5, null, null, 0],
-    display: 'flex',
+    display: "flex",
     minHeight: [256, null, null, 538, 470, 510, 633],
     mb: [5, null, null, null, 0],
-    width: '100%',
+    width: "100%",
   },
 };

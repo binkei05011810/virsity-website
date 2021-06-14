@@ -1,6 +1,11 @@
-import React from 'react';
-import { Image as Img } from 'theme-ui';
+import { Image as Img } from "theme-ui";
 
-export default function Image({ src, ...rest }) {
-  return <Img src={src} {...rest} />;
+export default function ({ src, ...rest }) {
+  return <Img src={src} {...rest} sx={styles.image} />;
 }
+
+const styles = {
+  image: {
+    width: 500,
+  },
+};

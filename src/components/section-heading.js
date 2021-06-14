@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Heading, Text, Image } from 'theme-ui';
+import { jsx, Box, Heading, Text, Image } from "theme-ui";
 
 const SectionHeading = ({ title, description, emoji, ...props }) => {
   return (
@@ -19,28 +19,29 @@ export default SectionHeading;
 
 const styles = {
   heading: {
-    textAlign: 'center',
+    textAlign: "center",
     maxWidth: 660,
-    margin: '0 auto 30px',
+    margin: "0 auto 30px",
   },
   title: {
-    color: 'heading',
+    color: "heading",
     fontWeight: 600,
     fontSize: [6, null, null, null, null, null, 40],
     lineHeight: [1.33, 1.33, 1.5],
-    letterSpacing: ['-1.5px', null, null, null, null, 0, '-1.5px'],
+    letterSpacing: ["-1.5px", null, null, null, null, 0, "-1.5px"],
     img: {
-      ml: ['15px'],
-      position: 'relative',
-      top: '8px',
-      maxWidth: [25, null, null, '100%'],
+      ml: ["15px"],
+      position: "relative",
+      top: "8px",
+      maxWidth: [25, null, null, "100%"],
     },
   },
   description: {
-    color: 'heading',
-    fontSize: ['14px', null, '16px'],
+    color: "heading",
+    textAlign: "center",
+    fontSize: ["14px", null, "16px"],
     lineHeight: [1.86, null, 2.2],
-    mt: [5],
+    margin: "0 auto 30px",
     maxWidth: 470,
   },
 };
