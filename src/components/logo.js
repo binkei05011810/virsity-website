@@ -11,6 +11,7 @@ export default function Logo({ isWhite, ...props }) {
     </Link>
   );
 }
+
 const styles = {
   logo: {
     alignItems: "center",

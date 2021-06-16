@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 import SectionHeading from "components/section-heading";
 import Problem from "components/problem/problem";
-import problem1 from "assets/images/problem1.svg";
+import problem1 from "assets/images/connect.svg";
 
 SwiperCore.use([Pagination, Navigation]);
 

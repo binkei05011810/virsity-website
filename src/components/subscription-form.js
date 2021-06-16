@@ -19,7 +19,8 @@ const SubscriptionForm = ({ buttonLabel, ...props }) => {
         id={`email-${id}`}
         placeholder="Enter Email address"
       />
-      <Button>{buttonLabel ?? 'Get Started'}</Button>
+      <Button>Host Competition</Button>
+      <Button>Register</Button>
     </Flex>
   );
 };
@@ -37,6 +38,8 @@ const styles = {
     },
     button: {
       ml: [3],
+      backgroundColor: "#0066ff",
+      //backgroundImage: "linear-gradient(to right, #0066ff, #4e6afa, #6c70f5, #8276f0, #937cec, #a580e9, #b585e7, #c28be4, #d590e1, #e596de, #f39cdb, #ffa4d8)",
     },
   },
 };

@@ -1,23 +1,26 @@
-import lock from 'assets/images/icons/lock.png';
 export default [
   {
     path: 'home',
     label: 'Home',
   },
   {
-    path: 'support',
-    label: 'Support',
+    path: 'competition',
+    label: 'Competition',
   },
   {
-    path: 'features',
-    label: 'Feature',
+    path: 'about',
+    label: 'About us',
   },
   {
-    path: 'pricing',
-    label: 'Pricing',
+    path: 'team',
+    label: 'Team',
   },
   {
-    path: 'testimonials',
-    label: 'Testimonials',
+    path: 'registration',
+    label: 'Registration',
+  },
+  {
+    path: 'contact',
+    label: 'Contact',
   },
 ];
