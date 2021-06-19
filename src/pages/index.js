@@ -20,7 +20,6 @@ export default function IndexPage() {
         <Banner />
         <About />
         <FeatureProblems />
-        <Dashboard />
         <Team />
       </Layout>
     </ThemeProvider>

@@ -19,18 +19,17 @@ const styles = {
     },
 
     headerWrapper: {
+        paddingTop: "180px",
         textAlign: "center",
         h1: {
             fontWeight: 700,
             fontSize: "4.5rem",
-            lineHeight: [1.26, null, null, 1.5, 1.2, 1.26],
-            letterSpacing: [0, null, null, null, "-1.5px"],
             color: "#08164b",
             fontFamily: "Londrina Shadow, cursive",
-            "@media screen and (min-width: 1441px) and (max-width:1600px)": {
-                fontSize: 12,
-                lineHeight: 1.5,
-            },
+        },
+
+        "@media screen and (max-width: 1200px)": {
+            paddingTop: 0
         },
     },
 

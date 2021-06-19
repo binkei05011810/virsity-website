@@ -1,52 +1,94 @@
 /** @jsx jsx */
-import { jsx, Container } from "theme-ui";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination, Navigation } from "swiper/core";
+import { jsx, Box, Flex, Container, Heading, Text } from "theme-ui";
+import Image from "components/image";
 import SectionHeading from "components/section-heading";
 import Problem from "components/problem/problem";
 import problem1 from "assets/images/connect.svg";
-
-SwiperCore.use([Pagination, Navigation]);
+import bottomDecor from "assets/images/bottomDecor1.png";
 
 const problems = [
   {
     name: "Challenge",
-    description: "Modernize historical quotes.",
+    description: "Prepare a quote dataset of your choice containing famous quotes or meaningful pieces of text anywhere online.",
     illustration: problem1,
     details: [
       {
-        title: "Organize your project content",
+        title: "Classification",
         contents: (
           <div>
-            Get your blood tests delivered at let collect sample from the
-            victory of the managements that supplies best design system
-            guidelines ever.
+            Classify quotes into different topics (including some that belong to
+            5 elements of SISU (Gratitude, Love, Courage, Passion, Perseverance),
+            and basic analysis on the text: categorization, topic modeling and
+            semantic analysis.
           </div>
         ),
       },
       {
-        title: "Collaborate your documents easily",
+        title: "Style Transfer",
         contents: (
           <div>
-            Get your blood tests delivered at let collect sample from the
-            victory of the managements that supplies best design system
-            guidelines ever.
+            Transforming quotes into text of different mediums (poetry, text in
+            a specific writer’s styles, comedy, rap, etc.
           </div>
         ),
       },
       {
-        title: `Build your team's knowledge base`,
+        title: "BONUS",
         contents: (
           <div>
-            Get your blood tests delivered at let collect sample from the
-            victory of the managements that supplies best design system
-            guidelines ever.
+            Based on training data, auto-generate quotes related to specific
+            categories and topics.
           </div>
         ),
       },
     ],
   },
 ];
+
+const styles = {
+  section: {
+    pt: [6, null, null, 6, 8, 9],
+    pb: [6, null, null, null, 7, 9, 11, null],
+    position: "relative",
+    backgroundColor: "#08164b"
+  },
+
+  carousel: {
+    "&.swiper-container": {
+      pb: [8],
+      pl: [6, null, null, 0],
+      pr: [6, null, null, 0],
+    },
+  },
+
+  bottomDecor: {
+    width: "100%",
+    position: "absolute",
+    top: 0,
+    left: 0
+  },
+
+  headerWrapper: {
+    paddingTop: "160px",
+    textAlign: "center",
+    h1: {
+      fontWeight: 700,
+      fontSize: "4.5rem",
+      lineHeight: [1.26, null, null, 1.5, 1.2, 1.26],
+      letterSpacing: [0, null, null, null, "-1.5px"],
+      color: "#fff6e9",
+      fontFamily: "Londrina Shadow, cursive",
+      "@media screen and (min-width: 1441px) and (max-width:1600px)": {
+        fontSize: 12,
+        lineHeight: 1.5,
+      },
+    },
+  },
+
+  container: {
+    paddingTop: "20px"
+  }
+};
 
 const FeatureProblems = () => {
   const options = {
@@ -61,18 +103,18 @@ const FeatureProblems = () => {
 
   return (
     <section id="features" sx={styles.section}>
-      <Container>
-        <SectionHeading
-          title="Feature Problems"
-          description="On-going problems in need of solutions."
-        />
-        <Swiper sx={styles.carousel} {...options}>
+      <Image sx={styles.bottomDecor} src={bottomDecor} />
+      <Box sx={styles.headerWrapper}>
+        <Heading as="h1">On-going challenges</Heading>
+      </Box>
+      <Container sx={styles.container}>
+        <Box sx={styles.carousel} {...options}>
           {problems.map((prob, index) => (
-            <SwiperSlide key={index}>
+            <Box key={index}>
               <Problem prob={prob} />
-            </SwiperSlide>
+            </Box>
           ))}
-        </Swiper>
+        </Box>
       </Container>
     </section>
   );
@@ -80,17 +122,4 @@ const FeatureProblems = () => {
 
 export default FeatureProblems;
 
-const styles = {
-  section: {
-    pt: [6, null, null, 6, 8, 9],
-    pb: [6, null, null, null, 7, 9, 11, null],
-  },
 
-  carousel: {
-    "&.swiper-container": {
-      pb: [8],
-      pl: [6, null, null, 0],
-      pr: [6, null, null, 0],
-    },
-  },
-};
