@@ -10,7 +10,7 @@ SwiperCore.use([Pagination, Navigation]);
 
 const problems = [
   {
-    name: "Quote Transformation",
+    name: "Challenge",
     description: "Modernize historical quotes.",
     illustration: problem1,
     details: [

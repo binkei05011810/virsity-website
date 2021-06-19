@@ -15,6 +15,8 @@ class CustomDocument extends Document {
             rel="stylesheet"
             crossOrigin="anonymous"
           />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
         </Head>
         <body>
           <Main />
