@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx, Box, Flex, Container, Heading, Text } from "theme-ui";
 import Image from "components/image";
-import SectionHeading from "components/section-heading";
 import Problem from "components/problem/problem";
 import problem1 from "assets/images/connect.svg";
 import bottomDecor from "assets/images/bottomDecor1.png";
+import curveDecor from "assets/images/curveDecor.png";
 
 const problems = [
   {
@@ -47,8 +47,7 @@ const problems = [
 
 const styles = {
   section: {
-    pt: [6, null, null, 6, 8, 9],
-    pb: [6, null, null, null, 7, 9, 11, null],
+    paddingTop: "150px",
     position: "relative",
     backgroundColor: "#08164b"
   },
@@ -73,11 +72,11 @@ const styles = {
     textAlign: "center",
     h1: {
       fontWeight: 700,
-      fontSize: "4.5rem",
+      fontSize: "3.5rem",
       lineHeight: [1.26, null, null, 1.5, 1.2, 1.26],
       letterSpacing: [0, null, null, null, "-1.5px"],
       color: "#fff6e9",
-      fontFamily: "Londrina Shadow, cursive",
+      fontFamily: "Bungee, cursive",
       "@media screen and (min-width: 1441px) and (max-width:1600px)": {
         fontSize: 12,
         lineHeight: 1.5,
@@ -86,7 +85,9 @@ const styles = {
   },
 
   container: {
-    paddingTop: "20px"
+    paddingTop: "20px",
+    marginRight: 0,
+    marginLeft: 0
   }
 };
 

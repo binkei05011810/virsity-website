@@ -1,22 +1,14 @@
 /** @jsx jsx */
-import { jsx, Box, Button, Grid, Heading, Text } from "theme-ui";
+import { jsx, Box, Button, Grid, Heading, Text, Flex } from "theme-ui";
 import Accordion from "components/accordion/accordion";
 import Countdown from "react-countdown";
 import Image from "components/image";
 
 const styles = {
-  grid: {
+  problemWrapper: {
     alignItems: "center",
-    gridTemplateColumns: [
-      "1fr",
-      null,
-      null,
-      null,
-      "1fr 431px",
-      "1fr 530px",
-      "1fr 550px",
-    ],
   },
+
   timerWrap: {
     display: "flex",
     flexWrap: "wrap",
@@ -34,6 +26,7 @@ const styles = {
       fontWeight: 600,
       color: "body",
     },
+
     h3: {
       lineHeight: 1.3,
       color: "heading",
@@ -66,6 +59,7 @@ const styles = {
     },
   },
   leftContent: {
+    width: "50%",
     display: "flex",
     minHeight: "500px",
     flexDirection: "column",
@@ -73,6 +67,11 @@ const styles = {
     alignItems: "center",
     textAlign: "center",
   },
+
+  rightContent: {
+    width: "50%",
+  },
+
   accordionGroup: {
     m: [null, null, null, "0 auto", "unset"],
     maxWidth: [null, null, null, 600, "none"],
@@ -118,7 +117,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
 const Problem = ({ prob }) => {
   const { name, description, illustration, details } = prob;
   return (
-    <Grid sx={styles.grid}>
+    <Flex sx={styles.problemWrapper}>
       <Box sx={styles.leftContent}>
         <Image src={illustration} alt="illustration" />
         <Button variant="primary" sx={styles.register}>
@@ -137,7 +136,7 @@ const Problem = ({ prob }) => {
         </Box>
         <Countdown date={Date.now() + 10000000} renderer={renderer} />
       </Box>
-    </Grid>
+    </Flex>
   );
 };
 
