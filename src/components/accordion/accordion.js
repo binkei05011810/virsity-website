@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx, Heading } from 'theme-ui';
-import { BsArrowRight } from 'react-icons/bs';
-import { BaseAccordion } from './base-accordion';
+import { jsx, Heading } from "theme-ui";
+import { BsArrowRight } from "react-icons/bs";
+import { BaseAccordion } from "./base-accordion";
 import {
   AccordionButton,
   AccordionItem,
@@ -9,8 +9,8 @@ import {
   single,
   preventClose,
   combineReducers,
-} from './shared';
-import { rgba } from 'polished';
+} from "./shared";
+import { rgba } from "polished";
 
 export default function Accordion({ items, ...props }) {
   return (
@@ -25,7 +25,7 @@ export default function Accordion({ items, ...props }) {
               key={item.title}
               sx={styles.accordion}
               isOpen={openIndexes.includes(index)}
-              className={openIndexes.includes(index) ? 'is-open' : 'is-closed'}
+              className={openIndexes.includes(index) ? "is-open" : "is-closed"}
             >
               <AccordionButton onClick={() => handleItemClick(index)}>
                 <Heading as="h3" sx={styles.title}>
@@ -34,7 +34,7 @@ export default function Accordion({ items, ...props }) {
                 {!openIndexes.includes(index) && (
                   <BsArrowRight
                     size="28px"
-                    color={rgba('#0F2137', 0.3)}
+                    color={rgba("#0F2137", 0.3)}
                     sx={styles.arrow}
                   />
                 )}
@@ -55,19 +55,19 @@ export default function Accordion({ items, ...props }) {
 
 const styles = {
   accordion: {
-    backgroundColor: '#F6F8FB',
+    backgroundColor: "#F6F8FB",
     borderRadius: 10,
-    p: ['15px', '20px 30px', '30px 45px', '20px 25px', '20px 35px'],
-    '&.is-open': {
-      backgroundColor: '#fff',
-      boxShadow: '0px 9px 30px rgba(69, 88, 157, 0.08)',
+    p: ["15px", "20px 30px", "30px 45px", "20px 25px", "20px 35px"],
+    boxShadow: "0px 9px 30px rgba(69, 88, 157, 0.08)",
+    "&.is-open": {
+      backgroundColor: "#fff",
     },
   },
   title: {
-    color: 'heading',
+    color: "heading",
     fontWeight: 500,
     fontSize: [1, null, null, 2],
-    letterSpacing: [0, null, null, null, 'heading'],
+    letterSpacing: [0, null, null, null, "heading"],
     lineHeight: [1.5, 1.8],
   },
   arrow: {

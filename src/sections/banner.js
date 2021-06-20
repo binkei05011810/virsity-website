@@ -1,66 +1,94 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Heading, Text } from "theme-ui";
+import { jsx, Box, Flex, Container, Heading, Text } from "theme-ui";
 import { rgba } from "polished";
 import Image from "components/image";
 import SubscriptionForm from "components/subscription-form";
-import illustration from "assets/images/connect.svg";
-import decor3 from "assets/images/decor3.png";
-import Countdown from "react-countdown";
-import renderer from "../components/header/timer";
-import { FaCentercode } from "react-icons/fa";
+import illustration from "assets/images/banner.svg";
+import ignite from "assets/images/ignite.png";
+
+const logos = [
+  {
+    name: "Ignite",
+    src: ignite,
+  },
+];
+
+const Banner = () => {
+  return (
+    <Box as="section" id="home" sx={styles.section}>
+      <Container>
+        <Box sx={styles.contentWrapper}>
+          <Box sx={styles.bannerContent}>
+            <Heading as="h1">A bridge between students and companies</Heading>
+            <Text as="p">
+              Virsity is all about making use of youthful and innovative talents
+              to solve companies’ intriguing problems. We offer students
+              opportunities to apply theoretical knowledge in real-life cases
+              throughout challenges from companies all around the world
+            </Text>
+            <SubscriptionForm sx={styles.subscriptionForm} />
+            <Flex sx={styles.sponsoredBy}>
+              <Text as="span">Sponsored by:</Text>
+              <Flex sx={styles.sponsor}>
+                {logos?.map((logo, index) => (
+                  <Flex as="figure" key={index}>
+                    <Image src={logo.src} alt={logo.name} />
+                  </Flex>
+                ))}
+              </Flex>
+            </Flex>
+          </Box>
+          <Flex as="figure" sx={styles.bannerImage}>
+            <Image src={illustration} alt="illustration" />
+          </Flex>
+        </Box>
+      </Container>
+    </Box>
+  );
+};
+
+export default Banner;
 
 const styles = {
   section: {
-    position: "relative",
-    backgroundColor: "#08164b",
     pt: [14, null, null, null, null, 0],
     pb: [6, null, null, 7, 11, 0],
-    overflow: "hidden"
   },
-
-  flexWrapper: {
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center"
-  },
-
   contentWrapper: {
-    margin: 0,
-    minHeight: ["auto", null, null, null, "38vh", "100vh"],
+    gap: ["50px 50px", null, null, null, "100px 100px", "100px 100px"],
+    display: ["block", null, null, null, "grid"],
+    gridTemplateColumns: [null, null, null, null, "1fr 1fr", "0.95fr 1.05fr"],
     alignItems: "center",
-    zIndex: 5
+    minHeight: ["auto", null, null, null, "38vh", "100vh"],
+    pt: [null, null, null, 8, 0, 9, null],
+    "@media only screen and (min-width:1900px)": {
+      pt: 10,
+    },
   },
-
-  bannerLeft: {
-    padding: " 200px 100px 0 100px",
-    flexDirection: "column",
-    width: "50%"
-  },
-
   bannerContent: {
-    width: "100%",
+    margin: [null, null, null, "0 auto", 0],
+    maxWidth: [null, null, null, 600, "none"],
     textAlign: [null, null, null, "center", "left"],
     h1: {
       fontWeight: 700,
-      fontSize: "3rem",
+      fontSize: [8, null, null, 10, 45, null, 12, 13],
       lineHeight: [1.26, null, null, 1.5, 1.2, 1.26],
       letterSpacing: [0, null, null, null, "-1.5px"],
-      color: "white",
+      color: "text",
       "@media screen and (min-width: 1441px) and (max-width:1600px)": {
         fontSize: 12,
         lineHeight: 1.5,
       },
     },
     p: {
-      fontSize: "1rem",
+      fontSize: [1, null, null, 2, 3],
       lineHeight: [1.5, null, null, 2, null, 2.33],
-      color: "white",
+      color: "text",
       maxWidth: [470],
       m: [null, null, null, "30px auto", 0],
       mt: [3, null, null, null, 5],
     },
   },
-
   subscriptionForm: {
     maxWidth: [null, null, null, 470, "none"],
     m: [null, null, null, "30px auto", "30px 0 0"],
@@ -78,64 +106,38 @@ const styles = {
         color: rgba("#02073E", 0.4),
         opacity: 1 /* Firefox */,
       },
-      zIndex: 5
     },
     button: {
       fontSize: [0, 1, null, null, 2],
       minHeight: [40, 50, null, null, null, 60],
-      zIndex: 5
     },
-    zIndex: 5
   },
-
+  sponsoredBy: {
+    alignItems: "center",
+    maxWidth: [null, null, null, 470, "none"],
+    m: [null, null, null, "30px auto", "30px 0 0"],
+    mt: [6],
+    span: {
+      fontSize: ["13px", null, null, null, 2],
+      lineHeight: 2.62,
+      color: rgba("#566272", 0.6),
+    },
+  },
+  sponsor: {
+    alignItems: "center",
+    figure: {
+      ml: [2, null, null, null, 4, 5],
+      img: {
+        maxWidth: ["60px", null, null, null, "60px", "60px"],
+      },
+    },
+  },
   bannerImage: {
-    padding: "0 50px 0 50px",
-    width: "50%",
-    zIndex: 5,
-    alignItems: "center"
+    alignItems: "center",
+    mt: [9, null, null, null, 0],
+    img: {
+      maxWidth: [null, null, null, "80%", "100%"],
+      m: [null, null, null, "0 auto", 0],
+    },
   },
-
-  decor3: {
-    width: "auto",
-    height: "48vw",
-    position: "absolute",
-    top: "calc(50% - 24vw)",
-    right: "-20%",
-  },
-
-  timerContent: {
-    paddingTop: "100px"
-  }
 };
-
-const Banner = () => {
-  return (
-    <Box as="section" id="home" sx={styles.section}>
-      <Image src={decor3} sx={styles.decor3} />
-      <Flex sx={styles.contentWrapper}>
-        <Flex sx={styles.bannerLeft}>
-          <Box sx={styles.bannerContent}>
-            <Heading as="h1">A bridge between students and companies</Heading>
-            <Text as="p">
-              Virsity is all about making use of youthful and innovative talents
-              to solve companies’ intriguing problems. We offer students
-              opportunities to apply theoretical knowledge in real-life cases
-              throughout challenges from companies all around the world
-                </Text>
-            <SubscriptionForm sx={styles.subscriptionForm} />
-          </Box>
-          <Box sx={styles.timerContent}>
-            <Countdown date={Date.now() + 10000000} renderer={renderer} />
-          </Box>
-        </Flex>
-
-        <Flex as="figure" sx={styles.bannerImage}>
-          <Image src={illustration} alt="illustration" />
-        </Flex>
-      </Flex>
-    </Box >
-  );
-};
-
-export default Banner;
-

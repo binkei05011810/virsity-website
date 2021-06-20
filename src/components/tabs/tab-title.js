@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { Fragment } from 'react';
-import { jsx, Text } from 'theme-ui';
+import { Fragment } from "react";
+import { jsx, Text } from "theme-ui";
 
 const TabTitle = ({ tab }) => {
   return tab.map(({ icon, title }, index) => (
@@ -21,6 +21,7 @@ const styles = {
     fontWeight: 500,
     mt: [0, null, null, 5],
     ml: [3, null, null, 0],
-    transition: '0.3s ease-in-out 0s',
+    transition: "0.3s ease-in-out 0s",
+    display: ["none", null, "block", null],
   },
 };

@@ -1,181 +1,206 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Container, Heading, Text } from "theme-ui";
+import { useRef, useEffect, useState } from "react";
 import { rgba } from "polished";
-import Image from "components/image";
-import bottomDecor from "assets/images/bottomDecor.png";
-import mission from "assets/images/mission.png";
-import student from "assets/images/student.png";
-import projects from "assets/images/projects.png";
-import curveDecor from "assets/images/curveDecor.png";
+import { jsx, Box, Container } from "theme-ui";
+import Tabs, { TabPane } from "rc-tabs";
+import TabTitle from "components/tabs/tab-title";
+import TabContent from "components/tabs/tab-content";
+import Currency from "components/icons/currency";
+import Cog from "components/icons/cog";
+import PieChart from "components/icons/pie-chart";
+import Suitcase from "components/icons/suitcase";
+import BarChart from "components/icons/bar-chart";
+import dashboard from "assets/images/dashboard.png";
 
-const styles = {
-    about: {
-        padding: 0,
-        position: "relative",
-        width: "100%",
-        backgroundColor: "#fff6e9",
-        pt: [14, null, null, null, null, 0],
-        pb: [6, null, null, 7, 11, 0],
-        overflow: "hidden",
-    },
+const data = [
+  {
+    id: 1,
+    tabPane: [
+      {
+        icon: <Currency />,
+        title: "Budget Overview",
+      },
+    ],
+    tabContent: [
+      {
+        image: dashboard,
+        title: `First quality feature that boost your website rank & performance`,
+        description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
+        readMore: "#introduce-quality",
+      },
+    ],
+  },
+  {
+    id: 2,
+    tabPane: [
+      {
+        icon: <Cog />,
+        title: "Create & adjust",
+      },
+    ],
+    tabContent: [
+      {
+        image: dashboard,
+        title: `Second quality feature that boost your website rank & performance`,
+        description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
+        readMore: "#introduce-quality",
+      },
+    ],
+  },
+  {
+    id: 3,
+    tabPane: [
+      {
+        icon: <PieChart />,
+        title: "View Reports",
+      },
+    ],
+    tabContent: [
+      {
+        image: dashboard,
+        title: `Third quality feature that boost your website rank & performance`,
+        description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
+        readMore: "#introduce-quality",
+      },
+    ],
+  },
+  {
+    id: 4,
+    tabPane: [
+      {
+        icon: <Suitcase />,
+        title: "Optimize website",
+      },
+    ],
+    tabContent: [
+      {
+        image: dashboard,
+        title: `Fourth quality feature that boost your website rank & performance`,
+        description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
+        readMore: "#introduce-quality",
+      },
+    ],
+  },
+  {
+    id: 5,
+    tabPane: [
+      {
+        icon: <BarChart />,
+        title: "Custom Dashboard",
+      },
+    ],
+    tabContent: [
+      {
+        image: dashboard,
+        title: `Fifth quality feature that boost your website rank & performance`,
+        description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
+        readMore: "#introduce-quality",
+      },
+    ],
+  },
+];
 
-    headerWrapper: {
-        paddingTop: "250px",
-        textAlign: "center",
-        h1: {
-            fontWeight: 700,
-            fontSize: "3.5rem",
-            color: "#08164b",
-            fontFamily: "Bungee, cursive",
-        },
+const Dashboard = () => {
+  const containerRef = useRef();
+  const [containerOffset, setContainerOffset] = useState({
+    left: null,
+    top: null,
+  });
+  useEffect(() => {
+    setContainerOffset({
+      left: containerRef.current.offsetLeft,
+      top: containerRef.current.offsetTop,
+    });
+  }, [containerRef]);
 
-        "@media screen and (max-width: 1200px)": {
-            paddingTop: 0
-        },
-    },
-
-    bottomDecor: {
-        width: "100%",
-        position: "absolute",
-        top: 0,
-        left: 0
-    },
-
-    curveDecor: {
-        width: "200px",
-        position: "absolute",
-        top: "300px",
-        left: "-10px"
-    },
-
-    curveDecor2: {
-        width: "200px",
-        position: "absolute",
-        bottom: "0",
-        right: 0
-    },
-
-    mainWrapper: {
-        padding: "80px 150px 100px 150px",
-
-        "@media screen and (max-width: 1200px)": {
-            padding: "80px 80px 0 80px",
-        },
-    },
-
-    mainContent: {
-        borderRadius: "1rem",
-        boxShadow: "rgb(38, 57, 77) 0px 30px 30px -0px",
-
-        "@media screen and (max-width: 1023px)": {
-            flexDirection: "column",
-        }
-    },
-
-    aboutContent: {
-        padding: "0 30px",
-        height: "38vw",
-        width: "50%",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "#fff6e9",
-        borderRadius: "1rem 0 0 1rem",
-        p: {
-            fontSize: "1rem",
-            lineHeight: "2rem",
-            color: "black",
-            maxWidth: [470],
-        },
-
-        "@media screen and (max-width: 1023px)": {
-            borderRadius: " 1rem 1rem 0 0",
-            width: "100%",
-            height: "50vw"
-        }
-    },
-
-    aboutImage: {
-        height: "38vw",
-        background: "-webkit-linear-gradient(90deg, hsla(216, 100%, 50%, 1) 0%, hsla(326, 100%, 82%, 1) 100%)",
-        width: "50%",
-        zIndex: 5,
-        alignItems: "center",
-        justifyContent: "flex-start",
-        borderRadius: " 0 1rem 1rem 0",
-
-        img: {
-            width: "80vw"
-        },
-
-        "@media screen and (max-width: 1023px)": {
-            borderRadius: "0 0 1rem 1rem",
-            width: "100%",
-            height: "50vw"
-        }
-    },
-    contentPoint: {
-        alignItems: "center",
-        justifyContent: "center",
-        marginBottom: "40px",
-        img: {
-            marginRight: "20px",
-            width: "30%",
-
-            "@media screen and (max-width: 1023px)": {
-                width: "20%",
-            }
-        },
-        p: {
-            fontSize: "1rem",
-            width: "70%",
-            margin: 0
-        },
-
-        "@media screen and (max-width: 1023px)": {
-            borderRadius: " 1rem 1rem 0 0",
-            width: "100%"
-        }
-    }
-};
-
-const About = () => {
-    return (
-        <Box p={0} as="section" id="about" sx={styles.about}>
-            <Image sx={styles.bottomDecor} src={bottomDecor} />
-            <Image sx={styles.curveDecor} src={curveDecor} />
-            <Image sx={styles.curveDecor2} src={curveDecor} />
-            <Box sx={styles.headerWrapper}>
-                <Heading as="h1">What we do</Heading>
-            </Box>
-            <Box sx={styles.mainWrapper}>
-                <Flex sx={styles.mainContent}>
-                    <Flex sx={styles.aboutContent}>
-                        <Flex sx={styles.contentPoint}>
-                            <Image src={student} />
-                            <Text as="p">
-                                Making use of youthful and innovative talents to solve companies’
-                                intriguing problems
-                        </Text>
-                        </Flex>
-
-                        <Flex sx={styles.contentPoint}>
-                            <Image src={projects} />
-                            <Text as="p">
-                                Offer students opportunities to apply theoretical knowledge in
-                                real-life cases throughout challenges from companies all around the world.
-                        </Text>
-                        </Flex>
-                    </Flex>
-
-                    <Flex as="figure" sx={styles.aboutImage}>
-                        <Image src={mission} />
-                    </Flex>
-                </Flex>
-            </Box>
-        </Box>
-    );
+  return (
+    <Box as="section" sx={styles.section}>
+      <Container ref={containerRef} />
+      <Box sx={{ pl: containerOffset.left + 30, ...styles.container }}>
+        <Tabs
+          sx={styles.tabs}
+          animated={{ tabPane: true }}
+          defaultActiveKey="2"
+        >
+          {data?.map((tab) => (
+            <TabPane key={tab?.id} tab={<TabTitle tab={tab.tabPane} />}>
+              <TabContent tabContent={tab?.tabContent} />
+            </TabPane>
+          ))}
+        </Tabs>
+      </Box>
+    </Box>
+  );
 };
 
 export default About;
 
+const styles = {
+  section: {
+    backgroundColor: "#353448",
+    pt: [9, null, null, 11, 10, 12, null],
+    pb: [9, null, null, null, 0],
+  },
+  container: {
+    maxWidth: ["none !important"],
+    pr: [6, null, null, 0],
+  },
+  tabs: {
+    border: 0,
+    color: "white",
+    ".rc-tabs-nav": {
+      mb: [8, null, null, 7, 10, null, 12],
+    },
+    ".rc-tabs-nav-wrap": {
+      "::before": {
+        backgroundColor: rgba("#fff", 0.1),
+        content: ["none", null, null, `''`],
+        height: 1,
+        position: "absolute",
+        left: 0,
+        top: 51,
+        width: "100%",
+      },
+      "::after": {
+        borderColor: ["primary"],
+      },
+    },
+    ".rc-tabs-nav-list": {
+      display: ["flex"],
+    },
+    ".rc-tabs-tab": {
+      backgroundColor: "transparent",
+      "+ .rc-tabs-tab": {
+        ml: [5, null, null, 5, 8, 12],
+        // mt: [0, null, null, 0],
+      },
+      "svg g, svg path": {
+        transition: "0.3s ease-in-out 0s",
+      },
+    },
+    ".rc-tabs-tab-btn": {
+      alignItems: "center",
+      display: ["flex", null, null, "block"],
+      outline: "0 none",
+      fontSize: [null, null, null, 15, 2],
+    },
+    ".rc-tabs-tab-active": {
+      "svg g, svg path": {
+        fill: "primary",
+        opacity: 1,
+      },
+      h5: {
+        color: "primary",
+      },
+    },
+    ".rc-tabs-ink-bar": {
+      backgroundColor: "primary",
+      borderRadius: 5,
+      bottom: [47],
+      display: ["none", null, null, "block"],
+    },
+    ".rc-tabs-tabpane": {
+      outline: "0 none",
+    },
+  },
+};

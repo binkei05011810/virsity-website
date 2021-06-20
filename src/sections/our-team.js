@@ -7,11 +7,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SectionHeading from "components/section-heading";
 import TeamMember from "components/cards/team-member";
 
-import avatar1 from "assets/images/profile.png";
-import avatar2 from "assets/images/profile.png";
-import avatar3 from "assets/images/profile.png";
-import avatar4 from "assets/images/profile.png";
-import arrowRight from "assets/images/icons/right-arrow.png";
+import avatar1 from "assets/images/team/member1.png";
+import avatar2 from "assets/images/team/member2.png";
+import avatar3 from "assets/images/team/member3.png";
+import avatar4 from "assets/images/team/member4.png";
+import arrowRight from "assets/images/icons/arrow-right.png";
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -162,7 +162,7 @@ const data = [
   },
 ];
 
-const Team = () => {
+const OurTeam = () => {
   const swiperRef = useRef(null);
   const containerRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -221,8 +221,8 @@ const Team = () => {
       <Container ref={containerRef}>
         <SectionHeading
           sx={styles.heading}
-          title="Meet our team"
-          description="A collection of clones"
+          title="Meet our superheros"
+          description="Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents."
         />
       </Container>
       <Box
@@ -266,7 +266,7 @@ const Team = () => {
   );
 };
 
-export default Team;
+export default OurTeam;
 
 const styles = {
   section: {

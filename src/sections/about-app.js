@@ -1,16 +1,16 @@
 /** @jsx jsx */
-import { useRef, useEffect, useState } from 'react';
-import { rgba } from 'polished';
-import { jsx, Box, Container } from 'theme-ui';
-import Tabs, { TabPane } from 'rc-tabs';
-import TabTitle from 'components/tabs/tab-title';
-import TabContent from 'components/tabs/tab-content';
-import Currency from 'components/icons/currency';
-import Cog from 'components/icons/cog';
-import PieChart from 'components/icons/pie-chart';
-import Suitcase from 'components/icons/suitcase';
-import BarChart from 'components/icons/bar-chart';
-import dashboard from 'assets/images/dashboard.png';
+import { useRef, useEffect, useState } from "react";
+import { rgba } from "polished";
+import { jsx, Box, Container } from "theme-ui";
+import Tabs, { TabPane } from "rc-tabs";
+import TabTitle from "components/tabs/tab-title";
+import TabContent from "components/tabs/tab-content";
+import Currency from "components/icons/currency";
+import Cog from "components/icons/cog";
+import PieChart from "components/icons/pie-chart";
+import Suitcase from "components/icons/suitcase";
+import BarChart from "components/icons/bar-chart";
+import dashboard from "assets/images/dashboard.png";
 
 const data = [
   {
@@ -18,7 +18,7 @@ const data = [
     tabPane: [
       {
         icon: <Currency />,
-        title: 'Budget Overview',
+        title: "Budget Overview",
       },
     ],
     tabContent: [
@@ -26,7 +26,7 @@ const data = [
         image: dashboard,
         title: `First quality feature that boost your website rank & performance`,
         description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
-        readMore: '#introduce-quality',
+        readMore: "#introduce-quality",
       },
     ],
   },
@@ -35,7 +35,7 @@ const data = [
     tabPane: [
       {
         icon: <Cog />,
-        title: 'Create & adjust',
+        title: "Create & adjust",
       },
     ],
     tabContent: [
@@ -43,7 +43,7 @@ const data = [
         image: dashboard,
         title: `Second quality feature that boost your website rank & performance`,
         description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
-        readMore: '#introduce-quality',
+        readMore: "#introduce-quality",
       },
     ],
   },
@@ -52,7 +52,7 @@ const data = [
     tabPane: [
       {
         icon: <PieChart />,
-        title: 'View Reports',
+        title: "View Reports",
       },
     ],
     tabContent: [
@@ -60,7 +60,7 @@ const data = [
         image: dashboard,
         title: `Third quality feature that boost your website rank & performance`,
         description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
-        readMore: '#introduce-quality',
+        readMore: "#introduce-quality",
       },
     ],
   },
@@ -69,7 +69,7 @@ const data = [
     tabPane: [
       {
         icon: <Suitcase />,
-        title: 'Optimize website',
+        title: "Optimize website",
       },
     ],
     tabContent: [
@@ -77,7 +77,7 @@ const data = [
         image: dashboard,
         title: `Fourth quality feature that boost your website rank & performance`,
         description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
-        readMore: '#introduce-quality',
+        readMore: "#introduce-quality",
       },
     ],
   },
@@ -86,7 +86,7 @@ const data = [
     tabPane: [
       {
         icon: <BarChart />,
-        title: 'Custom Dashboard',
+        title: "Custom Dashboard",
       },
     ],
     tabContent: [
@@ -94,13 +94,13 @@ const data = [
         image: dashboard,
         title: `Fifth quality feature that boost your website rank & performance`,
         description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
-        readMore: '#introduce-quality',
+        readMore: "#introduce-quality",
       },
     ],
   },
 ];
 
-const Dashboard = () => {
+const AboutApp = () => {
   const containerRef = useRef();
   const [containerOffset, setContainerOffset] = useState({
     left: null,
@@ -114,7 +114,7 @@ const Dashboard = () => {
   }, [containerRef]);
 
   return (
-    <Box as="section" sx={styles.section}>
+    <Box as="section" id="about" sx={styles.section}>
       <Container ref={containerRef} />
       <Box sx={{ pl: containerOffset.left + 30, ...styles.container }}>
         <Tabs
@@ -133,74 +133,78 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default AboutApp;
 
 const styles = {
   section: {
-    backgroundColor: '#353448',
+    backgroundColor: "transparent",
     pt: [9, null, null, 11, 10, 12, null],
     pb: [9, null, null, null, 0],
   },
   container: {
-    maxWidth: ['none !important'],
+    maxWidth: ["none !important"],
     pr: [6, null, null, 0],
+    minHeight: ["auto", null, null, null, "38vh", "100vh"],
   },
   tabs: {
     border: 0,
-    color: 'white',
-    '.rc-tabs-nav': {
+    color: "white",
+    ".rc-tabs-nav": {
       mb: [8, null, null, 7, 10, null, 12],
     },
-    '.rc-tabs-nav-wrap': {
-      '::before': {
-        backgroundColor: rgba('#fff', 0.1),
-        content: ['none', null, null, `''`],
+    ".rc-tabs-nav-wrap": {
+      "::before": {
+        backgroundColor: rgba("#fff", 0.1),
+        content: ["none", null, null, `''`],
         height: 1,
-        position: 'absolute',
+        position: "absolute",
         left: 0,
         top: 51,
-        width: '100%',
+        width: "100%",
       },
-      '::after': {
-        borderColor: ['primary'],
+      "::after": {
+        borderColor: ["primary"],
       },
     },
-    '.rc-tabs-nav-list': {
-      display: ['flex'],
+    ".rc-tabs-nav-list": {
+      display: ["flex"],
     },
-    '.rc-tabs-tab': {
-      backgroundColor: 'transparent',
-      '+ .rc-tabs-tab': {
+    ".rc-tabs-tab": {
+      backgroundColor: "transparent",
+      "+ .rc-tabs-tab": {
         ml: [5, null, null, 5, 8, 12],
         // mt: [0, null, null, 0],
       },
-      'svg g, svg path': {
-        transition: '0.3s ease-in-out 0s',
+      "svg g, svg path": {
+        transition: "0.3s ease-in-out 0s",
       },
     },
-    '.rc-tabs-tab-btn': {
-      alignItems: 'center',
-      display: ['flex', null, null, 'block'],
-      outline: '0 none',
+    ".rc-tabs-tab-btn": {
+      alignItems: "center",
+      display: ["flex", null, null, "block"],
+      outline: "0 none",
       fontSize: [null, null, null, 15, 2],
     },
-    '.rc-tabs-tab-active': {
-      'svg g, svg path': {
-        fill: 'primary',
+    ".rc-tabs-tab-active": {
+      "svg g, svg path": {
+        fill: "white",
         opacity: 1,
       },
       h5: {
-        color: 'primary',
+        color: "text",
       },
     },
-    '.rc-tabs-ink-bar': {
-      backgroundColor: 'primary',
+    ".rc-tabs-ink-bar": {
+      backgroundColor: "white",
       borderRadius: 5,
       bottom: [47],
-      display: ['none', null, null, 'block'],
+      display: ["none", null, null, "block"],
     },
-    '.rc-tabs-tabpane': {
-      outline: '0 none',
+    ".rc-tabs-tabpane": {
+      outline: "0 none",
+    },
+    ".rc-tabs-nav-more": {
+      display: "none",
     },
   },
 };
