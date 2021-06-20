@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx, Box, Button, Grid, Heading, Text, Flex } from "theme-ui";
 import Accordion from "components/accordion/accordion";
-import Countdown from "react-countdown";
 import Image from "components/image";
 
 const styles = {
@@ -45,6 +44,8 @@ const styles = {
 
     h2: {
       fontSize: [null, null, null, 10, 8, 10, 40],
+      fontFamily: "Arima Madurai, cursive",
+      fontWeight: 700,
       img: {
         maxWidth: [24, null, null, 30, 25, null, "100%"],
         top: ["4px", "8px", null, null, "4px", "8px"],
@@ -52,10 +53,10 @@ const styles = {
       mb: "4px",
       color: "#4cc9f0"
     },
-    p: {
-      fontSize: [null, null, null, 2],
-      mt: "4px",
 
+    p: {
+      fontSize: "1rem",
+      mt: "4px",
     },
   },
   leftContent: {
@@ -70,6 +71,7 @@ const styles = {
 
   rightContent: {
     width: "50%",
+    padding: "50px 100px 0 0px"
   },
 
   accordionGroup: {
@@ -80,38 +82,6 @@ const styles = {
     m: "0 auto",
     backgroundColor: "#0066ff",
   },
-};
-
-
-const Completionist = () => {
-  <Text>Times Up!</Text>;
-};
-
-const renderer = ({ days, hours, minutes, seconds, completed }) => {
-  if (completed) {
-    return <Completionist />;
-  } else {
-    return (
-      <Box sx={styles.timerWrap}>
-        <Box sx={styles.timer}>
-          <Text as="span">{days}</Text>
-          <Heading as="h3">Days</Heading>
-        </Box>
-        <Box sx={styles.timer}>
-          <Text as="span">{hours}</Text>
-          <Heading as="h3">Hours</Heading>
-        </Box>
-        <Box sx={styles.timer}>
-          <Text as="span">{minutes}</Text>
-          <Heading as="h3">Minutes</Heading>
-        </Box>
-        <Box sx={styles.timer}>
-          <Text as="span">{seconds}</Text>
-          <Heading as="h3">Seconds</Heading>
-        </Box>
-      </Box>
-    );
-  }
 };
 
 const Problem = ({ prob }) => {
@@ -134,7 +104,6 @@ const Problem = ({ prob }) => {
         <Box sx={styles.accordionGroup}>
           <Accordion items={details} />
         </Box>
-        <Countdown date={Date.now() + 10000000} renderer={renderer} />
       </Box>
     </Flex>
   );

@@ -16,7 +16,7 @@ const styles = {
         backgroundColor: "#fff6e9",
         pt: [14, null, null, null, null, 0],
         pb: [6, null, null, 7, 11, 0],
-        overflow: "hidden"
+        overflow: "hidden",
     },
 
     headerWrapper: {

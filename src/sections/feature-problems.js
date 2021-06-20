@@ -8,7 +8,7 @@ import curveDecor from "assets/images/curveDecor.png";
 
 const problems = [
   {
-    name: "Challenge",
+    name: "Modernize Quotes",
     description: "Prepare a quote dataset of your choice containing famous quotes or meaningful pieces of text anywhere online.",
     illustration: problem1,
     details: [
@@ -48,6 +48,7 @@ const problems = [
 const styles = {
   section: {
     paddingTop: "150px",
+    paddingBottom: "150px",
     position: "relative",
     backgroundColor: "#08164b"
   },
@@ -85,9 +86,7 @@ const styles = {
   },
 
   container: {
-    paddingTop: "20px",
-    marginRight: 0,
-    marginLeft: 0
+    //adding: "50px 100px 50px 50px"
   }
 };
 
@@ -108,7 +107,7 @@ const FeatureProblems = () => {
       <Box sx={styles.headerWrapper}>
         <Heading as="h1">On-going challenges</Heading>
       </Box>
-      <Container sx={styles.container}>
+      <Box sx={styles.container}>
         <Box sx={styles.carousel} {...options}>
           {problems.map((prob, index) => (
             <Box key={index}>
@@ -116,7 +115,7 @@ const FeatureProblems = () => {
             </Box>
           ))}
         </Box>
-      </Container>
+      </Box>
     </section>
   );
 };

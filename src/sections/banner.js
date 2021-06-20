@@ -1,10 +1,13 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Container, Heading, Text } from "theme-ui";
+import { jsx, Box, Flex, Heading, Text } from "theme-ui";
 import { rgba } from "polished";
 import Image from "components/image";
 import SubscriptionForm from "components/subscription-form";
 import illustration from "assets/images/connect.svg";
 import decor3 from "assets/images/decor3.png";
+import Countdown from "react-countdown";
+import renderer from "../components/header/timer";
+import { FaCentercode } from "react-icons/fa";
 
 const styles = {
   section: {
@@ -15,6 +18,12 @@ const styles = {
     overflow: "hidden"
   },
 
+  flexWrapper: {
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+
   contentWrapper: {
     margin: 0,
     minHeight: ["auto", null, null, null, "38vh", "100vh"],
@@ -22,9 +31,14 @@ const styles = {
     zIndex: 5
   },
 
+  bannerLeft: {
+    padding: " 200px 100px 0 100px",
+    flexDirection: "column",
+    width: "50%"
+  },
+
   bannerContent: {
-    padding: "0 50px 0 50px",
-    width: "50%",
+    width: "100%",
     textAlign: [null, null, null, "center", "left"],
     h1: {
       fontWeight: 700,
@@ -87,6 +101,10 @@ const styles = {
     position: "absolute",
     top: "calc(50% - 24vw)",
     right: "-20%",
+  },
+
+  timerContent: {
+    paddingTop: "100px"
   }
 };
 
@@ -94,29 +112,28 @@ const Banner = () => {
   return (
     <Box as="section" id="home" sx={styles.section}>
       <Image src={decor3} sx={styles.decor3} />
-      <Container>
-        <Flex sx={styles.contentWrapper}>
-          <Flex>
-            <Box sx={styles.bannerContent}>
-              <Heading as="h1">
-                A bridge between students and companies
-              </Heading>
-              <Text as="p">
-                Virsity is all about making use of youthful and innovative talents
-                to solve companies’ intriguing problems. We offer students
-                opportunities to apply theoretical knowledge in real-life cases
-                throughout challenges from companies all around the world
-              </Text>
-              <SubscriptionForm sx={styles.subscriptionForm} />
-            </Box>
-
-            <Flex as="figure" sx={styles.bannerImage}>
-              <Image src={illustration} alt="illustration" />
-            </Flex>
-          </Flex>
+      <Flex sx={styles.contentWrapper}>
+        <Flex sx={styles.bannerLeft}>
+          <Box sx={styles.bannerContent}>
+            <Heading as="h1">A bridge between students and companies</Heading>
+            <Text as="p">
+              Virsity is all about making use of youthful and innovative talents
+              to solve companies’ intriguing problems. We offer students
+              opportunities to apply theoretical knowledge in real-life cases
+              throughout challenges from companies all around the world
+                </Text>
+            <SubscriptionForm sx={styles.subscriptionForm} />
+          </Box>
+          <Box sx={styles.timerContent}>
+            <Countdown date={Date.now() + 10000000} renderer={renderer} />
+          </Box>
         </Flex>
-      </Container>
-    </Box>
+
+        <Flex as="figure" sx={styles.bannerImage}>
+          <Image src={illustration} alt="illustration" />
+        </Flex>
+      </Flex>
+    </Box >
   );
 };
 
