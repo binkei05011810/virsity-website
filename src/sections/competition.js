@@ -1,11 +1,18 @@
 /** @jsx jsx */
-import { jsx, Container } from "theme-ui";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { jsx, Container, Box } from "theme-ui";
 import SwiperCore, { Pagination, Navigation, Autoplay } from "swiper/core";
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
+
 import SectionHeading from "components/section-heading";
 import Problem from "components/problem/problem";
+import RegistrationFrom from "components/registration-form";
+
 import problem1 from "assets/images/problem1.svg";
 import problem2 from "assets/images/problem2.svg";
+
 
 SwiperCore.use([Pagination, Navigation, Autoplay]);
 
@@ -47,47 +54,19 @@ const problems = [
       },
     ],
   },
-
-  {
-    name: "Style Transformation",
-    description: "Modernize historical quotes.",
-    illustration: problem2,
-    details: [
-      {
-        title: "Organize your project content",
-        contents: (
-          <div>
-            Get your blood tests delivered at let collect sample from the
-            victory of the managements that supplies best design system
-            guidelines ever.
-          </div>
-        ),
-      },
-      {
-        title: "Collaborate your documents easily",
-        contents: (
-          <div>
-            Get your blood tests delivered at let collect sample from the
-            victory of the managements that supplies best design system
-            guidelines ever.
-          </div>
-        ),
-      },
-      {
-        title: `Build your team's knowledge base`,
-        contents: (
-          <div>
-            Get your blood tests delivered at let collect sample from the
-            victory of the managements that supplies best design system
-            guidelines ever.
-          </div>
-        ),
-      },
-    ],
-  },
 ];
 
 const Competition = () => {
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   const options = {
     spaceBetween: 30,
     loop: true,
@@ -110,15 +89,25 @@ const Competition = () => {
           title="Featured Competitions"
           description="On-going business problems in need of solutions."
         />
-        <Swiper sx={styles.carousel} {...options}>
+        <Box>
           {problems.map((prob, index) => (
-            <SwiperSlide key={index}>
-              <Problem prob={prob} />
-            </SwiperSlide>
+            <Box>
+              <Problem prob={prob} openModal={openModal} />
+            </Box>
           ))}
-        </Swiper>
+        </Box>
+
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          style={styles}
+          contentLabel="Example Modal"
+        >
+          <RegistrationFrom closeModal={closeModal} />
+        </Modal>
+
       </Container>
-    </section>
+    </section >
   );
 };
 
@@ -131,11 +120,12 @@ const styles = {
     minHeight: "100vh",
   },
 
-  carousel: {
-    "&.swiper-container": {
-      pb: [8],
-      pl: [6, null, null, 0],
-      pr: [6, null, null, 0],
-    },
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
   },
 };

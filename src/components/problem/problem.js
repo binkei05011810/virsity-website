@@ -4,65 +4,6 @@ import Accordion from "components/accordion/accordion";
 import Countdown from "react-countdown";
 import Image from "components/image";
 
-const Completionist = () => {
-  <Text>Times Up!</Text>;
-};
-
-const renderer = ({ days, hours, minutes, seconds, completed }) => {
-  if (completed) {
-    return <Completionist />;
-  } else {
-    return (
-      <Box sx={styles.timerWrap}>
-        <Box sx={styles.timer}>
-          <Text as="span">{days}</Text>
-          <Heading as="h3">Days</Heading>
-        </Box>
-        <Box sx={styles.timer}>
-          <Text as="span">{hours}</Text>
-          <Heading as="h3">Hours</Heading>
-        </Box>
-        <Box sx={styles.timer}>
-          <Text as="span">{minutes}</Text>
-          <Heading as="h3">Minutes</Heading>
-        </Box>
-        <Box sx={styles.timer}>
-          <Text as="span">{seconds}</Text>
-          <Heading as="h3">Seconds</Heading>
-        </Box>
-      </Box>
-    );
-  }
-};
-
-const Problem = ({ prob }) => {
-  const { name, description, illustration, details } = prob;
-  return (
-    <Grid sx={styles.grid}>
-      <Box sx={styles.leftContent}>
-        <Image src={illustration} alt="illustration" />
-        <Button variant="primary" sx={styles.register}>
-          Register Now !
-        </Button>
-      </Box>
-      <Box sx={styles.rightContent}>
-        <Box sx={styles.heading}>
-          <Heading as="h2">{name}</Heading>
-          <Text as="p" sx={styles.description}>
-            {description}
-          </Text>
-        </Box>
-        <Box sx={styles.accordionGroup}>
-          <Accordion items={details} />
-        </Box>
-        <Countdown date={Date.now() + 10000000} renderer={renderer} />
-      </Box>
-    </Grid>
-  );
-};
-
-export default Problem;
-
 const styles = {
   grid: {
     alignItems: "center",
@@ -136,3 +77,63 @@ const styles = {
     m: "0 auto",
   },
 };
+
+const Completionist = () => {
+  <Text>Times Up!</Text>;
+};
+
+const renderer = ({ days, hours, minutes, seconds, completed }) => {
+  if (completed) {
+    return <Completionist />;
+  } else {
+    return (
+      <Box sx={styles.timerWrap}>
+        <Box sx={styles.timer}>
+          <Text as="span">{days}</Text>
+          <Heading as="h3">Days</Heading>
+        </Box>
+        <Box sx={styles.timer}>
+          <Text as="span">{hours}</Text>
+          <Heading as="h3">Hours</Heading>
+        </Box>
+        <Box sx={styles.timer}>
+          <Text as="span">{minutes}</Text>
+          <Heading as="h3">Minutes</Heading>
+        </Box>
+        <Box sx={styles.timer}>
+          <Text as="span">{seconds}</Text>
+          <Heading as="h3">Seconds</Heading>
+        </Box>
+      </Box>
+    );
+  }
+};
+
+const Problem = ({ prob, openModal }) => {
+  const { name, description, illustration, details } = prob;
+  return (
+    <Grid sx={styles.grid}>
+      <Box sx={styles.leftContent}>
+        <Image src={illustration} alt="illustration" />
+        <Button variant="primary" onClick={openModal} sx={styles.register}>
+          Register Now !
+        </Button>
+      </Box>
+      <Box sx={styles.rightContent}>
+        <Box sx={styles.heading}>
+          <Heading as="h2">{name}</Heading>
+          <Text as="p" sx={styles.description}>
+            {description}
+          </Text>
+        </Box>
+        <Box sx={styles.accordionGroup}>
+          <Accordion items={details} />
+        </Box>
+        <Countdown date={Date.now() + 10000000} renderer={renderer} />
+      </Box>
+    </Grid>
+  );
+};
+
+export default Problem;
+
