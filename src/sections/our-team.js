@@ -7,10 +7,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SectionHeading from "components/section-heading";
 import TeamMember from "components/cards/team-member";
 
-import avatar1 from "assets/images/team/member1.png";
-import avatar2 from "assets/images/team/member2.png";
-import avatar3 from "assets/images/team/member3.png";
-import avatar4 from "assets/images/team/member4.png";
+import avatar1 from "assets/images/team/member1.jpg";
+import avatar2 from "assets/images/team/member2.jpeg";
+import avatar3 from "assets/images/team/member3.jpeg";
+import avatar4 from "assets/images/team/member4.jpeg";
+import avatar5 from "assets/images/team/member5.jpeg";
 import arrowRight from "assets/images/icons/arrow-right.png";
 
 SwiperCore.use([Navigation, Pagination]);
@@ -19,144 +20,69 @@ const data = [
   {
     id: 1,
     avatar: avatar1,
-    name: "Emmalee Mclain",
-    designation: "Product Designer",
+    name: "Nguyen Khue",
+    designation: "Software Engineer",
     socialLinks: [
       {
-        name: "twitter",
-        link: "http://twitter.com",
-      },
-      {
         name: "github",
-        link: "http://github.com",
+        link: "https://github.com/binkei05011810",
       },
       {
-        name: "dribbble",
-        link: "http://dribbble.com",
+        name: "linkedin",
+        link: "https://www.linkedin.com/in/khue-nguyen-b875a1193/",
       },
     ],
   },
   {
     id: 2,
     avatar: avatar2,
-    name: "Daisy Morgan",
-    designation: "Lead developer",
+    name: "Mia Nguyenova",
+    designation: "Business developer",
     socialLinks: [
       {
-        name: "twitter",
-        link: "http://twitter.com",
-      },
-      {
-        name: "dribbble",
-        link: "http://dribbble.com",
+        name: "linkedin",
+        link: "https://www.linkedin.com/in/mia-nguyenova-775b0b204/",
       },
     ],
   },
   {
     id: 3,
     avatar: avatar3,
-    name: "Ariyanna Hicks",
-    designation: "Experience Designer",
+    name: "Hau Phan",
+    designation: "Software developer",
     socialLinks: [
       {
-        name: "twitter",
-        link: "http://twitter.com",
+        name: "github",
+        link: "https://github.com/phanthh",
       },
       {
-        name: "github",
-        link: "http://github.com",
+        name: "linkedin",
+        link: "https://www.linkedin.com/in/phanthh/",
       },
     ],
   },
   {
     id: 4,
     avatar: avatar4,
-    name: "Yamilet Hooker",
-    designation: "User interface designer",
+    name: "Nam Hoang Giap",
+    designation: "Business Developer",
     socialLinks: [
       {
-        name: "twitter",
-        link: "http://twitter.com",
-      },
-      {
-        name: "github",
-        link: "http://github.com",
-      },
-      {
-        name: "dribbble",
-        link: "http://dribbble.com",
+        name: "linkedin",
+        link: "https://www.linkedin.com/in/nam-giap-1a3096198/",
       },
     ],
   },
+
   {
-    id: 5,
-    avatar: avatar1,
-    name: "Emmalee Mclain",
-    designation: "Product Designer",
+    id: 2,
+    avatar: avatar5,
+    name: "Trang Pham",
+    designation: "Project Manager",
     socialLinks: [
       {
-        name: "twitter",
-        link: "http://twitter.com",
-      },
-      {
-        name: "github",
-        link: "http://github.com",
-      },
-      {
-        name: "dribbble",
-        link: "http://dribbble.com",
-      },
-    ],
-  },
-  {
-    id: 6,
-    avatar: avatar2,
-    name: "Daisy Morgan",
-    designation: "Lead developer",
-    socialLinks: [
-      {
-        name: "twitter",
-        link: "http://twitter.com",
-      },
-      {
-        name: "dribbble",
-        link: "http://dribbble.com",
-      },
-    ],
-  },
-  {
-    id: 7,
-    avatar: avatar3,
-    name: "Ariyanna Hicks",
-    designation: "Experience Designer",
-    socialLinks: [
-      {
-        name: "twitter",
-        link: "http://twitter.com",
-      },
-      {
-        name: "github",
-        link: "http://github.com",
-      },
-    ],
-  },
-  {
-    id: 8,
-    avatar: avatar4,
-    name: "Yamilet Hooker",
-    designation: "User interface designer",
-    socialLinks: [
-      {
-        name: "twitter",
-        link: "http://twitter.com",
-      },
-      {
-        name: "github",
-        link: "http://github.com",
-      },
-      {
-        name: "dribbble",
-        link: "http://dribbble.com",
+        name: "linkedin",
+        link: "https://www.linkedin.com/in/tr4ng-ph4m/",
       },
     ],
   },
@@ -222,7 +148,7 @@ const OurTeam = () => {
         <SectionHeading
           sx={styles.heading}
           title="Meet our superheros"
-          description="Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents."
+          description="Here are dedicated team members behind Virsity"
         />
       </Container>
       <Box
