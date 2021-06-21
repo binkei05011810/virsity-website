@@ -63,11 +63,13 @@ const styles = {
   },
   leftContent: {
     display: "flex",
-    minHeight: "500px",
     flexDirection: "column",
     justifyContent: "space-around",
     alignItems: "center",
     textAlign: "center",
+    img: {
+      display: ["none", null, "block", null],
+    },
   },
   accordionGroup: {
     m: [null, null, null, "0 auto", "unset"],
