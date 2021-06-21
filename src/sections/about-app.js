@@ -16,7 +16,9 @@ import backgroundTop from "assets/images/app-about-background-top.svg";
 import backgroundBottom from "assets/images/app-about-background-bottom.svg";
 
 import projects from "assets/images/features/projects.png";
-import companies from "assets/images/features/projects.png";
+import companies from "assets/images/features/companies.png";
+import cv from "assets/images/features/cv.png";
+import collab from "assets/images/features/collab.png";
 
 const data = [
   {
@@ -29,7 +31,7 @@ const data = [
     ],
     tabContent: [
       {
-        image: dashboard,
+        image: projects,
         title: `Real Cases Projects`,
         description: `Students will have access to Real Cases Projects from companies around the world.`,
         readMore: "#introduce-quality",
@@ -41,14 +43,14 @@ const data = [
     tabPane: [
       {
         icon: <Cog />,
-        title: "",
+        title: "Connections Pool",
       },
     ],
     tabContent: [
       {
-        image: dashboard,
-        title: `Second quality feature that boost your website rank & performance`,
-        description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
+        image: companies,
+        title: `Global Companies Pool`,
+        description: `Students will also have connections from companies all around the world. For companies, they will have access to a diverse talents pool.`,
         readMore: "#introduce-quality",
       },
     ],
@@ -58,14 +60,14 @@ const data = [
     tabPane: [
       {
         icon: <PieChart />,
-        title: "View Reports",
+        title: "CVs",
       },
     ],
     tabContent: [
       {
-        image: dashboard,
-        title: `Third quality feature that boost your website rank & performance`,
-        description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
+        image: cv,
+        title: `Students' CVs`,
+        description: `Each students will have their own profile showcase all of their works for future job seeking and career.`,
         readMore: "#introduce-quality",
       },
     ],
@@ -75,31 +77,14 @@ const data = [
     tabPane: [
       {
         icon: <Suitcase />,
-        title: "Optimize website",
+        title: "Collaboration",
       },
     ],
     tabContent: [
       {
-        image: dashboard,
-        title: `Fourth quality feature that boost your website rank & performance`,
-        description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
-        readMore: "#introduce-quality",
-      },
-    ],
-  },
-  {
-    id: 5,
-    tabPane: [
-      {
-        icon: <BarChart />,
-        title: "Custom Dashboard",
-      },
-    ],
-    tabContent: [
-      {
-        image: dashboard,
-        title: `Fifth quality feature that boost your website rank & performance`,
-        description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
+        image: collab,
+        title: `Students' Collaboration`,
+        description: `Students can find partners to work on their projects.`,
         readMore: "#introduce-quality",
       },
     ],
