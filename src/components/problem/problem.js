@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx, Box, Button, Grid, Heading, Text } from "theme-ui";
 import Accordion from "components/accordion/accordion";
-import Countdown from "react-countdown";
 import Image from "components/image";
 import ScrollAnimation from "react-animate-on-scroll";
 
@@ -79,37 +78,6 @@ const styles = {
   },
 };
 
-const Completionist = () => {
-  <Text>Times Up!</Text>;
-};
-
-const renderer = ({ days, hours, minutes, seconds, completed }) => {
-  if (completed) {
-    return <Completionist />;
-  } else {
-    return (
-      <Box sx={styles.timerWrap}>
-        <Box sx={styles.timer}>
-          <Text as="span">{days}</Text>
-          <Heading as="h3">Days</Heading>
-        </Box>
-        <Box sx={styles.timer}>
-          <Text as="span">{hours}</Text>
-          <Heading as="h3">Hours</Heading>
-        </Box>
-        <Box sx={styles.timer}>
-          <Text as="span">{minutes}</Text>
-          <Heading as="h3">Minutes</Heading>
-        </Box>
-        <Box sx={styles.timer}>
-          <Text as="span">{seconds}</Text>
-          <Heading as="h3">Seconds</Heading>
-        </Box>
-      </Box>
-    );
-  }
-};
-
 const Problem = ({ prob, openModal }) => {
   const { name, description, illustration, details } = prob;
   return (
@@ -133,7 +101,6 @@ const Problem = ({ prob, openModal }) => {
           <Box sx={styles.accordionGroup}>
             <Accordion items={details} />
           </Box>
-          <Countdown date={Date.now() + 10000000} renderer={renderer} />
         </Box>
       </ScrollAnimation>
     </Grid>

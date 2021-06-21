@@ -8,6 +8,8 @@ import ignite from "assets/images/ignite.png";
 import bannerBackground from "assets/images/banner-background.svg";
 import bannerBackgroundMobile from "assets/images/banner-background-mobile.svg";
 import ScrollAnimation from "react-animate-on-scroll";
+import Countdown from "react-countdown";
+import renderer from "../components/header/timer";
 
 const logos = [
   {
@@ -66,6 +68,10 @@ const Banner = () => {
               <Image src={illustration} alt="illustration" />
             </Flex>
           </ScrollAnimation>
+        </Box>
+
+        <Box sx={styles.timerContent}>
+          <Countdown date={Date.now() + 10000000} renderer={renderer} />
         </Box>
       </Container>
     </Box>
