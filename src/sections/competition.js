@@ -3,12 +3,12 @@ import { jsx, Container, Box } from "theme-ui";
 import SwiperCore, { Pagination, Navigation, Autoplay } from "swiper/core";
 
 import React from "react";
-import ReactDOM from "react-dom";
 import Modal from "react-modal";
 
 import SectionHeading from "components/section-heading";
 import Problem from "components/problem/problem";
 import RegistrationFrom from "components/registration-form";
+import competitionBackground from "assets/images/competition-background.svg";
 
 import problem1 from "assets/images/problem1.svg";
 import problem2 from "assets/images/problem2.svg";
@@ -83,6 +83,7 @@ const Competition = () => {
 
   return (
     <section id="competition" sx={styles.section}>
+      <img src={competitionBackground} sx={styles.blobDecor} />
       <Container>
         <SectionHeading
           title="Featured Competitions"
@@ -95,7 +96,6 @@ const Competition = () => {
             </Box>
           ))}
         </Box>
-
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
@@ -113,9 +113,16 @@ export default Competition;
 
 const styles = {
   section: {
-    pt: [6, null, null, 6, 6, 6],
+    pt: [6, null, null, 6, 9, 12],
     pb: [6, null, null, null, 7, 9, 11, null],
     minHeight: "100vh",
+    position: "relative",
+  },
+  blobDecor: {
+    position: "absolute",
+    top: 0,
+    width: "100%",
+    zIndex: 100,
   },
 
   content: {

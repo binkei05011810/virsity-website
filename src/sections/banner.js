@@ -37,11 +37,10 @@ const Banner = () => {
               delay={250}
             >
               <Text as="p">
-                Virsity is all about making use of youthful and innovative
-                talents to solve companies’ intriguing problems. We offer
-                students opportunities to apply theoretical knowledge in
-                real-life cases throughout challenges from companies all around
-                the world
+                Virsity is all about making use of young, innovative talents to
+                solve companies’ problems. We offer students opportunities to
+                apply theoretical knowledge in real-life cases through
+                challenges from companies all around the world.
               </Text>
             </ScrollAnimation>
             <SubscriptionForm sx={styles.subscriptionForm} />

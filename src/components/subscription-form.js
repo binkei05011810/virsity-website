@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import { jsx, Flex, Input, Button, Label } from "theme-ui";
+import { jsx, Flex, Input, Button, Label, Radio } from "theme-ui";
 import { useState, useEffect } from "react";
-import ScrollAnimation from "react-animate-on-scroll";
 
 const SubscriptionForm = ({ buttonLabel, ...props }) => {
   const [id, setId] = useState("");
