@@ -4,10 +4,9 @@ import Sticky from "react-stickynode";
 import { useState } from "react";
 import { DrawerProvider } from "contexts/drawer/drawer-provider";
 import NavbarDrawer from "./navbar-drawer";
-import Image from "components/image";
-import logo from "assets/images/logo.png";
 import { NavLink } from "components/link";
 import menuItems from "./header.data";
+import Logo from "components/logo";
 
 const styles = {
   headerWrapper: {
@@ -39,21 +38,8 @@ const styles = {
 
   brand: {
     alignItems: "center",
-    marginRight: "30px"
+    marginRight: "30px",
   },
-
-  logo: {
-    width: "60px",
-    height: "60px",
-    borderRadius: "50%",
-    marginRight: "10px"
-  },
-
-  name: {
-    fontSize: "2rem",
-    fontFamily: "Londrina Shadow, cursive",
-  },
-
   navbar: {
     display: ["none", null, null, null, "flex"],
     alignItems: "center",
@@ -129,7 +115,6 @@ const styles = {
   },
 };
 
-
 export default function Header() {
   const [state, setState] = useState({
     isMobileMenu: false,
@@ -154,8 +139,7 @@ export default function Header() {
             <Container>
               <Box sx={styles.headerInner}>
                 <Flex sx={styles.brand}>
-                  <Image sx={styles.logo} src={logo} />
-                  <Text sx={styles.name}>Virsity</Text>
+                  <Logo isWhite={false} showLogo={true} />
                 </Flex>
                 <Flex
                   as="nav"
@@ -192,4 +176,3 @@ export default function Header() {
     </DrawerProvider>
   );
 }
-

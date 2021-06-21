@@ -3,6 +3,7 @@ import { jsx, Box, Container } from "theme-ui";
 import { rgba } from "polished";
 import SectionHeading from "components/section-heading";
 import SubscriptionForm from "components/subscription-form";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const Subscribe = () => {
   return (
@@ -13,7 +14,9 @@ const Subscribe = () => {
           title="Subscribe to get notified about update"
           description="By subscribing with your mail, you will accept our privacy policy"
         />
-        <SubscriptionForm sx={styles.subscriptionForm} />
+        <ScrollAnimation animateIn="fadeIn" animateOnce={true} delay={500}>
+          <SubscriptionForm sx={styles.subscriptionForm} />
+        </ScrollAnimation>
       </Container>
     </Box>
   );

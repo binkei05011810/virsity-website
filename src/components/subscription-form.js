@@ -1,9 +1,10 @@
 /** @jsx jsx */
-import { jsx, Flex, Input, Button, Label } from 'theme-ui';
-import { useState, useEffect } from 'react';
+import { jsx, Flex, Input, Button, Label } from "theme-ui";
+import { useState, useEffect } from "react";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const SubscriptionForm = ({ buttonLabel, ...props }) => {
-  const [id, setId] = useState('');
+  const [id, setId] = useState("");
 
   useEffect(() => {
     setId(Date.now());
@@ -19,7 +20,7 @@ const SubscriptionForm = ({ buttonLabel, ...props }) => {
         id={`email-${id}`}
         placeholder="Enter Email address"
       />
-      <Button>{buttonLabel ?? 'Get Started'}</Button>
+      <Button>{buttonLabel ?? "Get Started"}</Button>
     </Flex>
   );
 };
@@ -30,10 +31,10 @@ const styles = {
   form: {
     input: {
       flexGrow: 1,
-      p: ['0 20px', null, null, null, '0 25px'],
+      p: ["0 20px", null, null, null, "0 25px"],
       minHeight: [60],
-      height: 'auto',
-      width: 'auto',
+      height: "auto",
+      width: "auto",
     },
     button: {
       ml: [3],

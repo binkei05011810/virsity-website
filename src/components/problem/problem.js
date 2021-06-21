@@ -3,6 +3,7 @@ import { jsx, Box, Button, Grid, Heading, Text } from "theme-ui";
 import Accordion from "components/accordion/accordion";
 import Countdown from "react-countdown";
 import Image from "components/image";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const styles = {
   grid: {
@@ -113,27 +114,30 @@ const Problem = ({ prob, openModal }) => {
   const { name, description, illustration, details } = prob;
   return (
     <Grid sx={styles.grid}>
-      <Box sx={styles.leftContent}>
-        <Image src={illustration} alt="illustration" />
-        <Button variant="primary" onClick={openModal} sx={styles.register}>
-          Register Now !
-        </Button>
-      </Box>
-      <Box sx={styles.rightContent}>
-        <Box sx={styles.heading}>
-          <Heading as="h2">{name}</Heading>
-          <Text as="p" sx={styles.description}>
-            {description}
-          </Text>
+      <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+        <Box sx={styles.leftContent}>
+          <Image src={illustration} alt="illustration" />
+          <Button variant="primary" onClick={openModal} sx={styles.register}>
+            Register Now !
+          </Button>
         </Box>
-        <Box sx={styles.accordionGroup}>
-          <Accordion items={details} />
+      </ScrollAnimation>
+      <ScrollAnimation animateIn="fadeIn" animateOnce={true} delay={500}>
+        <Box sx={styles.rightContent}>
+          <Box sx={styles.heading}>
+            <Heading as="h2">{name}</Heading>
+            <Text as="p" sx={styles.description}>
+              {description}
+            </Text>
+          </Box>
+          <Box sx={styles.accordionGroup}>
+            <Accordion items={details} />
+          </Box>
+          <Countdown date={Date.now() + 10000000} renderer={renderer} />
         </Box>
-        <Countdown date={Date.now() + 10000000} renderer={renderer} />
-      </Box>
+      </ScrollAnimation>
     </Grid>
   );
 };
 
 export default Problem;
-
