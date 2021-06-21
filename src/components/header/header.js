@@ -1,79 +1,13 @@
 /** @jsx jsx */
-import { jsx, Box, Container, Flex, Button } from "theme-ui";
+import { jsx, Box, Container, Flex, Button, Text } from "theme-ui";
 import Sticky from "react-stickynode";
 import { useState } from "react";
 import { DrawerProvider } from "contexts/drawer/drawer-provider";
 import NavbarDrawer from "./navbar-drawer";
 import Image from "components/image";
-import Logo from "components/logo";
+import logo from "assets/images/logo.png";
 import { NavLink } from "components/link";
-
 import menuItems from "./header.data";
-import lock from "assets/images/icons/lock.png";
-
-export default function Header() {
-  const [state, setState] = useState({
-    isMobileMenu: false,
-    isSticky: false,
-  });
-  const handleCloseMenu = () => {
-    setState({
-      ...state,
-      isMobileMenu: false,
-    });
-  };
-
-  return (
-    <DrawerProvider>
-      <Box sx={styles.headerWrapper}>
-        <Sticky enabled={true} top={0} activeClass="is-sticky" innerZ={100}>
-          <Box
-            as="header"
-            variant="layout.header"
-            className={state.isMobileMenu ? "is-mobile-menu" : ""}
-          >
-            <Container>
-              <Box sx={styles.headerInner}>
-                <Logo sx={styles.logo} isSticky={state.isSticky} />
-                <Flex
-                  as="nav"
-                  sx={styles.navbar}
-                  className={state.isMobileMenu ? "navbar active" : "navbar"}
-                >
-                  <Box
-                    as="ul"
-                    sx={styles.navList}
-                    className={state.isMobileMenu ? "active" : ""}
-                  >
-                    {menuItems.map(({ path, label }, i) => (
-                      <li key={i}>
-                        <NavLink
-                          path={path}
-                          label={label}
-                          onClick={handleCloseMenu}
-                        />
-                      </li>
-                    ))}
-                  </Box>
-                </Flex>
-                <Flex sx={styles.buttonGroup}>
-                  <button sx={styles.login}>
-                    <Image src={lock} alt="lock icon" />
-                    Login
-                  </button>
-                  <Button variant="primary" sx={styles.getStarted}>
-                    Get Started
-                  </Button>
-                </Flex>
-                <NavbarDrawer />
-              </Box>
-            </Container>
-          </Box>
-        </Sticky>
-      </Box>
-    </DrawerProvider>
-  );
-}
 
 const styles = {
   headerWrapper: {
@@ -102,9 +36,24 @@ const styles = {
     justifyContent: "space-between",
     // position: ['relative', null, null, 'static'],
   },
-  logo: {
-    mr: [null, null, null, null, 30, 12],
+
+  brand: {
+    alignItems: "center",
+    marginRight: "30px"
   },
+
+  logo: {
+    width: "60px",
+    height: "60px",
+    borderRadius: "50%",
+    marginRight: "10px"
+  },
+
+  name: {
+    fontSize: "2rem",
+    fontFamily: "Londrina Shadow, cursive",
+  },
+
   navbar: {
     display: ["none", null, null, null, "flex"],
     alignItems: "center",
@@ -179,3 +128,68 @@ const styles = {
     },
   },
 };
+
+
+export default function Header() {
+  const [state, setState] = useState({
+    isMobileMenu: false,
+    isSticky: false,
+  });
+  const handleCloseMenu = () => {
+    setState({
+      ...state,
+      isMobileMenu: false,
+    });
+  };
+
+  return (
+    <DrawerProvider>
+      <Box sx={styles.headerWrapper}>
+        <Sticky enabled={true} top={0} activeClass="is-sticky" innerZ={100}>
+          <Box
+            as="header"
+            variant="layout.header"
+            className={state.isMobileMenu ? "is-mobile-menu" : ""}
+          >
+            <Container>
+              <Box sx={styles.headerInner}>
+                <Flex sx={styles.brand}>
+                  <Image sx={styles.logo} src={logo} />
+                  <Text sx={styles.name}>Virsity</Text>
+                </Flex>
+                <Flex
+                  as="nav"
+                  sx={styles.navbar}
+                  className={state.isMobileMenu ? "navbar active" : "navbar"}
+                >
+                  <Box
+                    as="ul"
+                    sx={styles.navList}
+                    className={state.isMobileMenu ? "active" : ""}
+                  >
+                    {menuItems.map(({ path, label }, i) => (
+                      <li key={i}>
+                        <NavLink
+                          path={path}
+                          label={label}
+                          onClick={handleCloseMenu}
+                        />
+                      </li>
+                    ))}
+                  </Box>
+                </Flex>
+                <Flex sx={styles.buttonGroup}>
+                  <Button variant="primary" sx={styles.getStarted}>
+                    Get Started
+                  </Button>
+                </Flex>
+                <NavbarDrawer />
+              </Box>
+            </Container>
+          </Box>
+        </Sticky>
+      </Box>
+    </DrawerProvider>
+  );
+}
+
