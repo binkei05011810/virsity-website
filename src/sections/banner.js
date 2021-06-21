@@ -5,6 +5,8 @@ import Image from "components/image";
 import SubscriptionForm from "components/subscription-form";
 import illustration from "assets/images/banner.svg";
 import ignite from "assets/images/ignite.png";
+import bannerBackground from "assets/images/banner-background.svg";
+import bannerBackgroundMobile from "assets/images/banner-background-mobile.svg";
 
 const logos = [
   {
@@ -16,6 +18,7 @@ const logos = [
 const Banner = () => {
   return (
     <Box as="section" id="home" sx={styles.section}>
+      <img src={bannerBackground} sx={styles.blobDecor} />
       <Container>
         <Box sx={styles.contentWrapper}>
           <Box sx={styles.bannerContent}>
@@ -53,6 +56,12 @@ const styles = {
   section: {
     pt: [12, null, null, null, null, 0],
     pb: [6, null, null, 7, 11, 0],
+  },
+  blobDecor: {
+    position: "absolute",
+    left: "45%",
+    width: "65%",
+    zIndex: "-1",
   },
   contentWrapper: {
     gap: ["50px 50px", null, null, null, "100px 100px", "100px 100px"],

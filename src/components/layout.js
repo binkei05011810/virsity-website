@@ -12,13 +12,6 @@ export default function Layout({ children }) {
         minHeight: "100vh",
         flexDirection: "column",
         justifyContent: "space-between",
-        background: [
-          `url(${bannerBackgroundMobile})`,
-          null,
-          null,
-          `url(${bannerBackground})`,
-        ],
-        backgroundSize: "100% auto",
       }}
     >
       <Header />
