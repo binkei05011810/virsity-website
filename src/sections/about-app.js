@@ -11,6 +11,9 @@ import PieChart from "components/icons/pie-chart";
 import Suitcase from "components/icons/suitcase";
 import BarChart from "components/icons/bar-chart";
 import dashboard from "assets/images/dashboard.png";
+import background from "assets/images/app-about-background.svg";
+import backgroundTop from "assets/images/app-about-background-top.svg";
+import backgroundBottom from "assets/images/app-about-background-bottom.svg";
 
 const data = [
   {
@@ -115,6 +118,7 @@ const AboutApp = () => {
 
   return (
     <Box as="section" id="about" sx={styles.section}>
+      <img src={backgroundTop} sx={styles.overlayTop} />
       <Container ref={containerRef} />
       <Box sx={{ pl: containerOffset.left + 30, ...styles.container }}>
         <Tabs
@@ -129,6 +133,7 @@ const AboutApp = () => {
           ))}
         </Tabs>
       </Box>
+      <img src={backgroundBottom} sx={styles.overlayBottom} />
     </Box>
   );
 };
@@ -137,9 +142,22 @@ export default AboutApp;
 
 const styles = {
   section: {
-    backgroundColor: "transparent",
-    pt: [9, null, null, 11, 10, 12, null],
-    pb: [9, null, null, null, 0],
+    backgroundColor: "",
+    pt: [9, null, null, 11, 10, "12%", null],
+    pb: [9, null, null, 11, 10, "12%", null],
+    background: [`url(${background})`],
+    backgroundSize: "100% auto",
+    position: "relative",
+  },
+  overlayTop: {
+    position: "absolute",
+    top: -2,
+    width: "100%",
+  },
+  overlayBottom: {
+    position: "absolute",
+    bottom: -2,
+    width: "100%",
   },
   container: {
     maxWidth: ["none !important"],

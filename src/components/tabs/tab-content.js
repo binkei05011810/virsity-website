@@ -34,11 +34,11 @@ const styles = {
       fontSize: [6, null, null, 10],
       lineHeight: 1.5,
       letterSpacing: "heading",
-      color: "text",
+      color: "white",
     },
     p: {
       fontSize: [1, null, null, 2],
-      color: "text",
+      color: "white",
       lineHeight: [1.8, null, null, 2.2],
       mt: [5],
     },
