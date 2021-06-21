@@ -11,9 +11,6 @@ import RegistrationFrom from "components/registration-form";
 import competitionBackground from "assets/images/competition-background.svg";
 
 import problem1 from "assets/images/problem1.svg";
-import problem2 from "assets/images/problem2.svg";
-
-SwiperCore.use([Pagination, Navigation, Autoplay]);
 
 const problems = [
   {
