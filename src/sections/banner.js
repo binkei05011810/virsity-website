@@ -51,7 +51,7 @@ export default Banner;
 
 const styles = {
   section: {
-    pt: [14, null, null, null, null, 0],
+    pt: [12, null, null, null, null, 0],
     pb: [6, null, null, 7, 11, 0],
   },
   contentWrapper: {
@@ -86,7 +86,7 @@ const styles = {
       color: "text",
       maxWidth: [470],
       m: [null, null, null, "30px auto", 0],
-      mt: [3, null, null, null, 5],
+      mt: [8, null, null, 10, 10],
     },
   },
   subscriptionForm: {
@@ -114,9 +114,10 @@ const styles = {
   },
   sponsoredBy: {
     alignItems: "center",
+    display: ["none", null, "block", null],
     maxWidth: [null, null, null, 470, "none"],
     m: [null, null, null, "30px auto", "30px 0 0"],
-    mt: [6],
+    mt: [3, 6, null, null],
     span: {
       fontSize: ["13px", null, null, null, 2],
       lineHeight: 2.62,
@@ -136,8 +137,8 @@ const styles = {
     alignItems: "center",
     mt: [9, null, null, null, 0],
     img: {
-      maxWidth: [null, null, null, "80%", "100%"],
-      m: [null, null, null, "0 auto", 0],
+      maxWidth: ["80%", null, null, "80%", "100%"],
+      m: ["0 auto", "0 auto", "0 auto", "0 auto", 0],
     },
   },
 };

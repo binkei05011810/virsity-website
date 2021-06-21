@@ -2,9 +2,9 @@
 import { jsx, Container, Box } from "theme-ui";
 import SwiperCore, { Pagination, Navigation, Autoplay } from "swiper/core";
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Modal from 'react-modal';
+import React from "react";
+import ReactDOM from "react-dom";
+import Modal from "react-modal";
 
 import SectionHeading from "components/section-heading";
 import Problem from "components/problem/problem";
@@ -12,7 +12,6 @@ import RegistrationFrom from "components/registration-form";
 
 import problem1 from "assets/images/problem1.svg";
 import problem2 from "assets/images/problem2.svg";
-
 
 SwiperCore.use([Pagination, Navigation, Autoplay]);
 
@@ -105,9 +104,8 @@ const Competition = () => {
         >
           <RegistrationFrom closeModal={closeModal} />
         </Modal>
-
       </Container>
-    </section >
+    </section>
   );
 };
 
@@ -121,11 +119,11 @@ const styles = {
   },
 
   content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
   },
 };
