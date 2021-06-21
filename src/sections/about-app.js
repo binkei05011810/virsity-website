@@ -15,20 +15,23 @@ import background from "assets/images/app-about-background.svg";
 import backgroundTop from "assets/images/app-about-background-top.svg";
 import backgroundBottom from "assets/images/app-about-background-bottom.svg";
 
+import projects from "assets/images/features/projects.png";
+import companies from "assets/images/features/projects.png";
+
 const data = [
   {
     id: 1,
     tabPane: [
       {
         icon: <Currency />,
-        title: "Budget Overview",
+        title: "Various Projects",
       },
     ],
     tabContent: [
       {
         image: dashboard,
-        title: `First quality feature that boost your website rank & performance`,
-        description: `Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents. Get your tests delivered at let home collect sample from the victory of the supplies design system.`,
+        title: `Real Cases Projects`,
+        description: `Students will have access to Real Cases Projects from companies around the world.`,
         readMore: "#introduce-quality",
       },
     ],
@@ -38,7 +41,7 @@ const data = [
     tabPane: [
       {
         icon: <Cog />,
-        title: "Create & adjust",
+        title: "",
       },
     ],
     tabContent: [
