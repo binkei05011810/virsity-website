@@ -15,12 +15,10 @@ export default function Layout({ children }) {
         background: [
           `url(${bannerBackgroundMobile})`,
           null,
-          `url(${bannerBackground})`,
           null,
+          `url(${bannerBackground})`,
         ],
-        backgroundRepeat: "repeat-x",
-        backgroundPosition: "center",
-        backgroundSize: "auto 100%",
+        backgroundSize: "100% auto",
       }}
     >
       <Header />
