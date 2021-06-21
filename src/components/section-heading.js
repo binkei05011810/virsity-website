@@ -1,17 +1,20 @@
 /** @jsx jsx */
 import { jsx, Box, Heading, Text, Image } from "theme-ui";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const SectionHeading = ({ title, description, emoji, ...props }) => {
   return (
-    <Box sx={styles.heading} {...props}>
-      <Heading sx={styles.title}>
-        {emoji ? <span>{title}</span> : title}
-        {emoji && <Image src={emoji} alt="emoji" />}
-      </Heading>
-      <Text as="p" sx={styles.description}>
-        {description}
-      </Text>
-    </Box>
+    <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+      <Box sx={styles.heading} {...props}>
+        <Heading sx={styles.title}>
+          {emoji ? <span>{title}</span> : title}
+          {emoji && <Image src={emoji} alt="emoji" />}
+        </Heading>
+        <Text as="p" sx={styles.description}>
+          {description}
+        </Text>
+      </Box>
+    </ScrollAnimation>
   );
 };
 

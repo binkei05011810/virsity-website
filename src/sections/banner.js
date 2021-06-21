@@ -7,6 +7,7 @@ import illustration from "assets/images/banner.svg";
 import ignite from "assets/images/ignite.png";
 import bannerBackground from "assets/images/banner-background.svg";
 import bannerBackgroundMobile from "assets/images/banner-background-mobile.svg";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const logos = [
   {
@@ -22,13 +23,27 @@ const Banner = () => {
       <Container>
         <Box sx={styles.contentWrapper}>
           <Box sx={styles.bannerContent}>
-            <Heading as="h1">A bridge between students and companies</Heading>
-            <Text as="p">
-              Virsity is all about making use of youthful and innovative talents
-              to solve companies’ intriguing problems. We offer students
-              opportunities to apply theoretical knowledge in real-life cases
-              throughout challenges from companies all around the world
-            </Text>
+            <ScrollAnimation
+              animateIn="fadeInDown"
+              duration={0.6}
+              animateOnce={true}
+            >
+              <Heading as="h1">A bridge between students and companies</Heading>
+            </ScrollAnimation>
+            <ScrollAnimation
+              animateIn="fadeInDown"
+              duration={0.6}
+              animateOnce={true}
+              delay={250}
+            >
+              <Text as="p">
+                Virsity is all about making use of youthful and innovative
+                talents to solve companies’ intriguing problems. We offer
+                students opportunities to apply theoretical knowledge in
+                real-life cases throughout challenges from companies all around
+                the world
+              </Text>
+            </ScrollAnimation>
             <SubscriptionForm sx={styles.subscriptionForm} />
             <Flex sx={styles.sponsoredBy}>
               <Text as="span">Sponsored by:</Text>
@@ -41,9 +56,16 @@ const Banner = () => {
               </Flex>
             </Flex>
           </Box>
-          <Flex as="figure" sx={styles.bannerImage}>
-            <Image src={illustration} alt="illustration" />
-          </Flex>
+          <ScrollAnimation
+            animateIn="fadeIn"
+            duration={1}
+            animateOnce={true}
+            delay={400}
+          >
+            <Flex as="figure" sx={styles.bannerImage}>
+              <Image src={illustration} alt="illustration" />
+            </Flex>
+          </ScrollAnimation>
         </Box>
       </Container>
     </Box>
@@ -56,6 +78,7 @@ const styles = {
   section: {
     pt: [12, null, null, null, null, 0],
     pb: [6, null, null, 7, 11, 0],
+    overflow: "hidden",
   },
   blobDecor: {
     position: "absolute",

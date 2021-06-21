@@ -33,7 +33,7 @@ export default function Footer() {
       <Container>
         <Flex sx={styles.footerInner}>
           <Flex sx={styles.copyright}>
-            <Logo isWhite />
+            <Logo isWhite showLogo={true} />
             <Text as="span">
               &copy; Copyright by {new Date().getFullYear()} Virsity, Inc
             </Text>
