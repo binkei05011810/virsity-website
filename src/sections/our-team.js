@@ -75,7 +75,7 @@ const data = [
   },
 
   {
-    id: 2,
+    id: 5,
     avatar: avatar5,
     name: "Trang Pham",
     designation: "Project Manager",
