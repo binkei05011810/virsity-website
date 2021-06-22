@@ -75,18 +75,30 @@ const styles = {
     m: [null, null, null, "0 auto", "unset"],
     maxWidth: [null, null, null, 600, "none"],
   },
+  companyInfo: {
+    mt: 10,
+    borderRadius: 10,
+    p: ["15px", "20px 30px", "30px 45px", "20px 25px", "20px 35px"],
+    boxShadow: "0px 9px 30px rgba(69, 88, 157, 0.08)",
+    h2: {
+      mb: 4,
+    },
+  },
   register: {
-    m: "0 auto",
+    m: "30px auto",
   },
 };
 
 const Problem = ({ prob, openModal }) => {
-  const { name, description, illustration, details } = prob;
+  const { name, description, details, companyName, companyLogo } = prob;
   return (
     <Grid sx={styles.grid}>
       <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
         <Box sx={styles.leftContent}>
-          <Image src={illustration} alt="illustration" />
+          <Box sx={styles.companyInfo}>
+            <Heading as="h2">{companyName}</Heading>
+            <Image src={companyLogo} alt="company-logo" />
+          </Box>
           <Button variant="primary" onClick={openModal} sx={styles.register}>
             Register Now !
           </Button>

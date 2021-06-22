@@ -6,7 +6,6 @@ import SubscriptionForm from "components/subscription-form";
 import illustration from "assets/images/banner.svg";
 import ignite from "assets/images/ignite.png";
 import bannerBackground from "assets/images/banner-background.svg";
-import bannerBackgroundMobile from "assets/images/banner-background-mobile.svg";
 import ScrollAnimation from "react-animate-on-scroll";
 import Countdown from "react-countdown";
 import renderer from "../components/header/timer";

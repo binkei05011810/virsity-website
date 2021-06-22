@@ -10,41 +10,45 @@ import Problem from "components/problem/problem";
 import RegistrationFrom from "components/registration-form";
 import competitionBackground from "assets/images/competition-background.svg";
 
-import problem1 from "assets/images/problem1.svg";
+import logo1 from "assets/images/problem1/company-logo.jpg";
 
 const problems = [
   {
-    name: "Quote Transformation",
-    description: "Modernize historical quotes.",
-    illustration: problem1,
+    name: "Leadership",
+    description: "Natural language processing and analysis",
+    companyName: "Kasvu Labs",
+    companyLogo: logo1,
     details: [
       {
-        title: "Organize your project content",
+        title: "Abstract",
         contents: (
           <div>
-            Get your blood tests delivered at let collect sample from the
-            victory of the managements that supplies best design system
-            guidelines ever.
+            Kasvu Labs is currently working with language data collected from
+            high-performing individuals in order to understand what makes great
+            leadership. The results of their machine learning experimentation
+            will be used to empower young entrepreneurs and the next generation
+            of innovators
           </div>
         ),
       },
       {
-        title: "Collaborate your documents easily",
+        title: "Registration",
         contents: (
           <div>
-            Get your blood tests delivered at let collect sample from the
-            victory of the managements that supplies best design system
-            guidelines ever.
+            Entering your email by clicking on the registration button. Detailed
+            description of the challenge will be sent to your inbox along with
+            additional instructions for submitting your project.
           </div>
         ),
       },
       {
-        title: `Build your team's knowledge base`,
+        title: "Price Pool",
         contents: (
           <div>
-            Get your blood tests delivered at let collect sample from the
-            victory of the managements that supplies best design system
-            guidelines ever.
+            Minimum of 1000 EUR will be given to the team or individuals with
+            the most innovative and practical solution. There are additional
+            bonuses for solving side challenges regarding the problem. Detailed
+            will be provided in the email.
           </div>
         ),
       },
@@ -55,28 +59,23 @@ const problems = [
 const Competition = () => {
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
-  function openModal() {
-    setIsOpen(true);
-  }
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
 
-  function closeModal() {
-    setIsOpen(false);
-  }
-
-  const options = {
-    spaceBetween: 30,
-    loop: true,
-    centeredSlides: true,
-    slidesPerView: 1,
-    pagination: {
-      clickable: true,
-    },
-    speed: 1000,
-    autoplay: {
-      delay: 3500,
-      disableOnInteraction: true,
-    },
-  };
+  // const options = {
+  //   spaceBetween: 30,
+  //   loop: true,
+  //   centeredSlides: true,
+  //   slidesPerView: 1,
+  //   pagination: {
+  //     clickable: true,
+  //   },
+  //   speed: 1000,
+  //   autoplay: {
+  //     delay: 3500,
+  //     disableOnInteraction: true,
+  //   },
+  // };
 
   return (
     <section id="competition" sx={styles.section}>
@@ -88,16 +87,16 @@ const Competition = () => {
         />
         <Box>
           {problems.map((prob, index) => (
-            <Box>
-              <Problem prob={prob} openModal={openModal} />
-            </Box>
+            <Problem prob={prob} openModal={openModal} key={index} />
           ))}
         </Box>
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
-          style={styles}
-          contentLabel="Example Modal"
+          style={styles.modal}
+          contentLabel="Registration Form"
+          preventScroll={true}
+          closeTimeoutMS={250}
         >
           <RegistrationFrom closeModal={closeModal} />
         </Modal>
@@ -119,15 +118,23 @@ const styles = {
     position: "absolute",
     top: 0,
     width: "100%",
-    zIndex: 100,
   },
+  modal: {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      border: "none",
+      borderRadius: 15,
+      boxShadow: "0px 9px 30px rgba(69, 88, 157, 0.08)",
+      padding: "50px",
+    },
 
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
+    overlay: {
+      backdropFilter: "blur(6px)",
+    },
   },
 };
