@@ -80,6 +80,7 @@ export default Banner;
 
 const styles = {
   section: {
+    position: "relative",
     pt: [12, null, null, null, null, 0],
     pb: [6, null, null, 7, 11, 0],
     overflow: "hidden",
