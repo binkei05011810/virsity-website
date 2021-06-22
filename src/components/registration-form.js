@@ -85,7 +85,7 @@ const RegistrationForm = ({ closeModal }) => {
           <Label sx={styles.label} htmlFor="lastname">
             Last name
           </Label>
-          <Input sx={styles.input} name="firstname" id="lastname" mb={3} />
+          <Input sx={styles.input} name="lastname" id="lastname" mb={3} />
         </Box>
       </Flex>
 
@@ -99,6 +99,11 @@ const RegistrationForm = ({ closeModal }) => {
           With team
         </Label>
       </Flex>
+
+      <Label sx={styles.label} htmlFor="email">
+        Email
+      </Label>
+      <Input sx={styles.input} name="email" id="email" mb={3} />
 
       <Label sx={styles.label} htmlFor="teamname">
         Team name (optional)
