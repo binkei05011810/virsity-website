@@ -1,11 +1,11 @@
 {
-  "name": "@landing/015-next",
+  "name": "virsity-website",
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "start": "next start -p $PORT",
     "dev": "next dev",
     "build": "next build",
-    "serve": "next start",
     "export": "next export",
     "postbuild": "next-sitemap"
   },
@@ -36,5 +36,8 @@
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
     "next-sitemap": "^1.1.6"
-  }
+  },
+  "cacheDirectories": [
+    ".next/cache"
+  ]
 }

@@ -67,9 +67,6 @@ const styles = {
     justifyContent: "space-around",
     alignItems: "center",
     textAlign: "center",
-    img: {
-      display: ["none", null, "block", null],
-    },
   },
   accordionGroup: {
     m: [null, null, null, "0 auto", "unset"],
