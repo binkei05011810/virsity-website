@@ -1,7 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Flex, Box, Image, Text, Heading, Link } from "theme-ui";
+import { jsx, Flex, Box, Text, Heading, Link } from "theme-ui";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
+import Image from "components/image";
 
 const TeamMember = ({ member }) => {
   return (

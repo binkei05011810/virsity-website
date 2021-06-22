@@ -2,8 +2,6 @@
 import { jsx, Flex } from "theme-ui";
 import Header from "./header/header";
 import Footer from "./footer/footer";
-import bannerBackground from "assets/images/banner-background.svg";
-import bannerBackgroundMobile from "assets/images/banner-background-mobile.svg";
 
 export default function Layout({ children }) {
   return (

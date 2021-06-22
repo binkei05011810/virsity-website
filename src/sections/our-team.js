@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SectionHeading from "components/section-heading";
 import TeamMember from "components/cards/team-member";
 
-import avatar1 from "assets/images/team/member1.jpg";
+import avatar1 from "assets/images/team/member1.jpeg";
 import avatar2 from "assets/images/team/member2.jpeg";
 import avatar3 from "assets/images/team/member3.jpeg";
 import avatar4 from "assets/images/team/member4.jpeg";

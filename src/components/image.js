@@ -6,6 +6,9 @@ export default function ({ src, ...rest }) {
 
 const styles = {
   image: {
-    maxWidth: [200, 200, 250, 250],
+    img: {
+      width: [200, 200, 250, 250],
+      height: [200, 200, 250, 250],
+    },
   },
 };

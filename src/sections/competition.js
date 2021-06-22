@@ -10,7 +10,7 @@ import Problem from "components/problem/problem";
 import RegistrationFrom from "components/registration-form";
 import competitionBackground from "assets/images/competition-background.svg";
 
-import logo1 from "assets/images/problem1/company-logo.jpg";
+import logo1 from "assets/images/problem1/company-logo.jpeg";
 
 const problems = [
   {

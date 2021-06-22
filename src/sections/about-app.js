@@ -9,8 +9,6 @@ import Currency from "components/icons/currency";
 import Cog from "components/icons/cog";
 import PieChart from "components/icons/pie-chart";
 import Suitcase from "components/icons/suitcase";
-import BarChart from "components/icons/bar-chart";
-import dashboard from "assets/images/dashboard.png";
 import background from "assets/images/app-about-background.svg";
 import backgroundTop from "assets/images/app-about-background-top.svg";
 import backgroundBottom from "assets/images/app-about-background-bottom.svg";
