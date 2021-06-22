@@ -132,9 +132,5 @@ const styles = {
       boxShadow: "0px 9px 30px rgba(69, 88, 157, 0.08)",
       padding: "50px",
     },
-
-    overlay: {
-      backdropFilter: "blur(6px)",
-    },
   },
 };

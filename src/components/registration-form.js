@@ -72,7 +72,7 @@ const RegistrationForm = ({ closeModal }) => {
     >
       <Text as="h2">Registration Form</Text>
       <Box sx={styles.closeBtn} onClick={closeModal}>
-        <i class="far fa-times-circle"></i>
+        <i className="far fa-times-circle"></i>
       </Box>
       <Flex sx={styles.name}>
         <Box sx={styles.nameBox}>
@@ -110,4 +110,3 @@ const RegistrationForm = ({ closeModal }) => {
 };
 
 export default RegistrationForm;
-

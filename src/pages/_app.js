@@ -5,7 +5,6 @@ import "rc-drawer/assets/index.css";
 import "rc-tabs/assets/index.css";
 import "swiper/swiper-bundle.css";
 import "assets/css/modal.css";
-import "animate.css/animate.min.css";
 
 export default function CustomApp({ Component, pageProps }) {
   useEffect(() => {
