@@ -1,15 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Button } from "theme-ui";
-import {
-  Label,
-  Input,
-  Select,
-  Textarea,
-  Radio,
-  Checkbox,
-  Slider,
-  Text,
-} from "theme-ui";
+import { Box, Button, Flex, Input, jsx, Label, Radio, Text } from "theme-ui";
 
 const styles = {
   name: {
@@ -63,6 +53,7 @@ const styles = {
     },
   },
 };
+
 const RegistrationForm = ({ closeModal }) => {
   return (
     <Box

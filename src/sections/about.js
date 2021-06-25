@@ -5,11 +5,11 @@ import { jsx, Box, Container } from "theme-ui";
 import Tabs, { TabPane } from "rc-tabs";
 import TabTitle from "components/tabs/tab-title";
 import TabContent from "components/tabs/tab-content";
-import Currency from "components/icons/currency";
-import Cog from "components/icons/cog";
-import PieChart from "components/icons/pie-chart";
-import Suitcase from "components/icons/suitcase";
-import BarChart from "components/icons/bar-chart";
+import Currency from "components/tabs/icons/currency";
+import Cog from "components/tabs/icons/cog";
+import PieChart from "components/tabs/icons/pie-chart";
+import Suitcase from "components/tabs/icons/suitcase";
+import BarChart from "components/tabs/icons/bar-chart";
 import dashboard from "assets/images/dashboard.png";
 
 const data = [

@@ -163,6 +163,7 @@ export default function Header() {
                   </Box>
                 </Flex>
                 <Flex sx={styles.buttonGroup}>
+                  <Button variant="white">Sign In</Button>
                   <Button variant="primary" sx={styles.getStarted}>
                     Get Started
                   </Button>

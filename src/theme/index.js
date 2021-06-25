@@ -220,8 +220,11 @@ export default {
     },
     white: {
       variant: "buttons.default",
-      backgroundColor: "white",
-      color: "#020718",
+      backgroundColor: "transparent",
+      color: "#000000",
+      "&:hover": {
+        color: "primary",
+      },
     },
     text: {
       variant: "buttons.default",

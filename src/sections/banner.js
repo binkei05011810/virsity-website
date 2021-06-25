@@ -8,7 +8,7 @@ import ignite from "assets/images/ignite.png";
 import bannerBackground from "assets/images/banner-background.svg";
 import ScrollAnimation from "react-animate-on-scroll";
 import Countdown from "react-countdown";
-import renderer from "../components/header/timer";
+import renderer from "../components/timer";
 
 const logos = [
   {
@@ -50,7 +50,11 @@ const Banner = () => {
               <Flex sx={styles.sponsor}>
                 {logos?.map((logo, index) => (
                   <Flex as="figure" key={index}>
-                    <Image src={logo.src} alt={logo.name} />
+                    <Image
+                      src={logo.src}
+                      alt={logo.name}
+                      sx={styles.sponsor.logo}
+                    />
                   </Flex>
                 ))}
               </Flex>
@@ -165,11 +169,13 @@ const styles = {
     alignItems: "center",
     figure: {
       ml: [2, null, null, null, 4, 5],
-      img: {
-        maxWidth: ["60px", null, null, null, "60px", "60px"],
-      },
+    },
+    logo: {
+      maxWidth: ["60px", null, null, null, "60px", "60px"],
+      maxHeight: ["60px", null, null, null, "60px", "60px"],
     },
   },
+
   bannerImage: {
     alignItems: "center",
     mt: [9, null, null, null, 0],
