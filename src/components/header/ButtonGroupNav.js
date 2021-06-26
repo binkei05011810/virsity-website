@@ -5,7 +5,7 @@ import { Flex, Button } from "@theme-ui/components";
 import Modal from "react-modal";
 import { AuthContext } from "auth/auth-context";
 
-function SignInButton({ openModel, inDrawer }) {
+function SignInButton({ openModal, inDrawer }) {
   return (
     <Button
       variant="white"
@@ -45,6 +45,26 @@ function LogOutButton({ dispatch, inDrawer }) {
   );
 }
 
+function GetStartedButton({ inDrawer }) {
+  return (
+    <Button
+      variant="primary"
+      sx={
+        inDrawer
+          ? {
+              ...styles.getStarted,
+              display: "flex",
+              m: "0 auto",
+              mb: "20px",
+            }
+          : styles.getStarted
+      }
+    >
+      Get Started
+    </Button>
+  );
+}
+
 function ButtonGroupNav({ inDrawer }) {
   const { state, dispatch } = useContext(AuthContext);
   const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -54,25 +74,11 @@ function ButtonGroupNav({ inDrawer }) {
   return (
     <Flex sx={inDrawer ? { flexDirection: "column" } : null}>
       {state.loggedIn ? (
-        <SignInButton inDrawer={inDrawer} openModel={openModal} />
-      ) : (
         <LogOutButton inDrawer={inDrawer} dispatch={dispatch} />
+      ) : (
+        <SignInButton inDrawer={inDrawer} openModal={openModal} />
       )}
-      <Button
-        variant="primary"
-        sx={
-          inDrawer
-            ? {
-                ...styles.getStarted,
-                display: "flex",
-                m: "0 auto",
-                mb: "20px",
-              }
-            : styles.getStarted
-        }
-      >
-        Get Started
-      </Button>
+      <GetStartedButton inDrawer={inDrawer} />
 
       <Modal
         isOpen={modalIsOpen}

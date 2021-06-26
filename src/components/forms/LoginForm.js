@@ -1,10 +1,9 @@
-/** @jsx jsx */
 import { AuthContext } from "auth/auth-context";
 import { auth, provider } from "../../firebase";
 import { useContext } from "react";
 import { Button } from "theme-ui";
 
-function LoginForm() {
+function LoginForm({ ...props }) {
   const { state, dispatch } = useContext(AuthContext);
 
   const loginWithGoogle = () => {

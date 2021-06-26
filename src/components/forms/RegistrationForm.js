@@ -56,12 +56,13 @@ const styles = {
   },
 };
 
-const RegistrationForm = ({ closeModal }) => {
+const RegistrationForm = ({ closeModal, ...rest }) => {
   return (
     <Box
       sx={styles.formContainer}
       as="form"
       onSubmit={(e) => e.preventDefault()}
+      {...rest}
     >
       <Text as="h2">Registration Form</Text>
       <Box sx={styles.closeBtn} onClick={closeModal}>
