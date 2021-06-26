@@ -1,14 +1,14 @@
 /** @jsx jsx */
 import { jsx, Box, Flex, Container, Heading, Text } from "theme-ui";
 import { rgba } from "polished";
-import Image from "components/image";
-import SubscriptionForm from "components/subscription-form";
+import Image from "components/Image";
+import SubscriptionForm from "components/forms/SubscriptionForm";
 import illustration from "assets/images/banner.svg";
 import ignite from "assets/images/ignite.png";
 import bannerBackground from "assets/images/banner-background.svg";
 import ScrollAnimation from "react-animate-on-scroll";
 import Countdown from "react-countdown";
-import renderer from "../components/timer";
+import renderer from "../components/Timer";
 
 const logos = [
   {

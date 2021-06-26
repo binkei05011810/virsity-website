@@ -4,8 +4,8 @@ import { useRef, useState, useEffect } from "react";
 import { jsx, Box, Container, Image } from "theme-ui";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SectionHeading from "components/section-heading";
-import TeamMember from "components/cards/team-member";
+import SectionHeading from "components/SectionHeading";
+import TeamMember from "components/cards/TeamMember";
 
 import avatar1 from "assets/images/team/member1.jpeg";
 import avatar2 from "assets/images/team/member2.jpeg";

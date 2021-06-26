@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Box, Button, Grid, Heading, Text } from "theme-ui";
-import Accordion from "components/accordion/accordion";
-import Image from "components/image";
+import Accordion from "components/accordion/Accordion";
+import Image from "components/Image";
 import ScrollAnimation from "react-animate-on-scroll";
 
 const styles = {

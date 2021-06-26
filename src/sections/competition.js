@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import competitionBackground from "assets/images/competition-background.svg";
 import logo1 from "assets/images/problem1/company-logo.jpeg";
-import Problem from "components/problem/problem";
-import RegistrationFrom from "components/registration-form";
-import SectionHeading from "components/section-heading";
+import Problem from "components/problem/Problem";
+import RegistrationFrom from "components/forms/RegistrationForm";
+import SectionHeading from "components/SectionHeading";
 import React from "react";
 import Modal from "react-modal";
 import { Box, Container, jsx } from "theme-ui";
@@ -126,6 +126,10 @@ const styles = {
       borderRadius: 15,
       boxShadow: "0px 9px 30px rgba(69, 88, 157, 0.08)",
       padding: "50px",
+    },
+    overlay: {
+      zIndex: 100,
+      backdropFilter: "blur(3px)",
     },
   },
 };

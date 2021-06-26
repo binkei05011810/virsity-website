@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx, Flex, Box, Text, Heading, Link } from "theme-ui";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
-import Image from "components/image";
+import Image from "components/Image";
 
 const TeamMember = ({ member }) => {
   return (

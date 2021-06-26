@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx, Box, Container } from "theme-ui";
 import { rgba } from "polished";
-import SectionHeading from "components/section-heading";
-import SubscriptionForm from "components/subscription-form";
+import SectionHeading from "components/SectionHeading";
+import SubscriptionForm from "components/forms/SubscriptionForm";
 import ScrollAnimation from "react-animate-on-scroll";
 
 const Subscribe = () => {

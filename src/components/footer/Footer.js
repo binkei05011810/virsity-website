@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx, Flex, Box, Text, Container } from "theme-ui";
 import { rgba } from "polished";
-import { Link } from "components/link";
-import Logo from "components/logo";
+import { Link } from "components/Link";
+import Logo from "components/Logo";
 
 const menuItems = [
   {

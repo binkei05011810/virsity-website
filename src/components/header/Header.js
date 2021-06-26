@@ -3,10 +3,12 @@ import { jsx, Box, Container, Flex, Button, Text } from "theme-ui";
 import Sticky from "react-stickynode";
 import { useState } from "react";
 import { DrawerProvider } from "contexts/drawer/drawer-provider";
-import NavbarDrawer from "./navbar-drawer";
-import { NavLink } from "components/link";
+import NavbarDrawer from "./DrawerNav";
+import { NavLink } from "components/Link";
 import menuItems from "./header.data";
-import Logo from "components/logo";
+import Logo from "components/Logo";
+import Modal from "react-modal";
+import ButtonGroupNav from "./ButtonGroupNav";
 
 const styles = {
   headerWrapper: {
@@ -68,14 +70,6 @@ const styles = {
     ".active": {
       color: "primary",
     },
-  },
-  getStarted: {
-    backgroundColor: "primary",
-    color: "textSecondary",
-    ml: [6],
-    minHeight: ["40px", "40px", "40px", "40px", "40px", "50px"],
-    padding: ["0 25px", "0 25px", "0 25px", "0 30px"],
-    display: ["none", null, null, null, "flex"],
   },
   login: {
     backgroundColor: "transparent",
@@ -162,12 +156,7 @@ export default function Header() {
                     ))}
                   </Box>
                 </Flex>
-                <Flex sx={styles.buttonGroup}>
-                  <Button variant="white">Sign In</Button>
-                  <Button variant="primary" sx={styles.getStarted}>
-                    Get Started
-                  </Button>
-                </Flex>
+                <ButtonGroupNav />
                 <NavbarDrawer />
               </Box>
             </Container>

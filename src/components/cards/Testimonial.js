@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Heading, Link } from 'theme-ui';
-import Image from 'components/image';
+import { jsx, Box, Flex, Heading, Link } from "theme-ui";
+import Image from "components/Image";
 
 const Testimonial = ({ data }) => {
   return (
@@ -23,20 +23,20 @@ export default Testimonial;
 
 const styles = {
   testimonial: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderRadius: 5,
-    p: '25px 35px 30px',
-    transition: 'all 0.3s ease 0s',
-    ':hover': {
-      boxShadow: '0px 13px 40px rgba(75, 102, 135, 0.1)',
+    p: "25px 35px 30px",
+    transition: "all 0.3s ease 0s",
+    ":hover": {
+      boxShadow: "0px 13px 40px rgba(75, 102, 135, 0.1)",
     },
-    '+ div': {
+    "+ div": {
       mt: [4],
     },
   },
   quote: {
     lineHeight: 1.88,
-    color: 'text',
+    color: "text",
   },
   author: {
     mt: [6],
@@ -44,17 +44,17 @@ const styles = {
       mr: [3],
     },
     h3: {
-      fontSize: '17px',
+      fontSize: "17px",
       lineHeight: 1.3,
-      color: 'text',
+      color: "text",
     },
     a: {
       fontWeight: 500,
       fontSize: [1],
       lineHeight: 2.14,
-      color: 'link',
-      cursor: 'pointer',
-      textDecoration: 'none',
+      color: "link",
+      cursor: "pointer",
+      textDecoration: "none",
     },
   },
 };

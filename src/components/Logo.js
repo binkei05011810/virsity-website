@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Text } from "theme-ui";
-import { Link } from "components/link";
-import Image from "components/image";
+import { Link } from "components/Link";
+import Image from "components/Image";
 import LogoImg from "assets/images/logo.svg";
 
 export default function Logo({ isWhite, showLogo, ...props }) {

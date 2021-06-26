@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Heading } from "theme-ui";
 import { BsArrowRight } from "react-icons/bs";
-import { BaseAccordion } from "./base-accordion";
+import { BaseAccordion } from "./BaseAccordion";
 import {
   AccordionButton,
   AccordionItem,
