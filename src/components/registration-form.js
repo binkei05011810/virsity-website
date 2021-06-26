@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { Box, Button, Flex, Input, jsx, Label, Radio, Text } from "theme-ui";
+import * as AiIcons from "react-icons/ai";
 
 const styles = {
   name: {
@@ -48,6 +49,7 @@ const styles = {
     position: "absolute",
     top: 0,
     right: 0,
+    fontSize: 25,
     "&:hover": {
       cursor: "pointer",
     },
@@ -63,7 +65,7 @@ const RegistrationForm = ({ closeModal }) => {
     >
       <Text as="h2">Registration Form</Text>
       <Box sx={styles.closeBtn} onClick={closeModal}>
-        <i className="far fa-times-circle"></i>
+        <AiIcons.AiOutlineCloseCircle />
       </Box>
       <Flex sx={styles.name}>
         <Box sx={styles.nameBox}>

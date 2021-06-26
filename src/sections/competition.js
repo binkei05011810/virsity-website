@@ -1,16 +1,12 @@
 /** @jsx jsx */
-import { jsx, Container, Box } from "theme-ui";
-import SwiperCore, { Pagination, Navigation, Autoplay } from "swiper/core";
-
-import React from "react";
-import Modal from "react-modal";
-
-import SectionHeading from "components/section-heading";
+import competitionBackground from "assets/images/competition-background.svg";
+import logo1 from "assets/images/problem1/company-logo.jpeg";
 import Problem from "components/problem/problem";
 import RegistrationFrom from "components/registration-form";
-import competitionBackground from "assets/images/competition-background.svg";
-
-import logo1 from "assets/images/problem1/company-logo.jpeg";
+import SectionHeading from "components/section-heading";
+import React from "react";
+import Modal from "react-modal";
+import { Box, Container, jsx } from "theme-ui";
 
 const problems = [
   {
@@ -92,11 +88,10 @@ const Competition = () => {
         </Box>
         <Modal
           isOpen={modalIsOpen}
-          onRequestClose={closeModal}
           style={styles.modal}
           contentLabel="Registration Form"
+          onRequestClose={closeModal}
           preventScroll={true}
-          closeTimeoutMS={250}
         >
           <RegistrationFrom closeModal={closeModal} />
         </Modal>
