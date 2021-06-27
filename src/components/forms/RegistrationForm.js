@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { Box, Button, Flex, Input, jsx, Label, Radio, Text } from "theme-ui";
 import * as AiIcons from "react-icons/ai";
+import { useContext } from "react";
+import { AuthContext } from "auth/auth-context";
 
 const styles = {
   name: {

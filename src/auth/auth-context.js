@@ -1,4 +1,5 @@
 import React, { createContext, useReducer } from "react";
+import { toast } from "react-toastify";
 
 const initialState = {
   loggedIn: false,
@@ -9,7 +10,7 @@ const initialState = {
 function reducer(state, action) {
   switch (action.type) {
     case "login":
-      toast(`Hi ${action.payload.user.displayName} !😁`);
+      toast(`Hi ${action.payload.user.displayName} ! 😁`);
       return {
         loggedIn: true,
         credential: action.payload.credential,
@@ -27,7 +28,7 @@ function reducer(state, action) {
   }
 }
 
-export const AuthContext = createContext({});
+export const AuthContext = createContext(initialState);
 
 export function AuthProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);

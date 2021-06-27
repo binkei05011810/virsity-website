@@ -3,6 +3,9 @@ import { jsx, Box, Button, Grid, Heading, Text } from "theme-ui";
 import Accordion from "components/accordion/Accordion";
 import Image from "components/Image";
 import ScrollAnimation from "react-animate-on-scroll";
+import { useContext } from "react";
+import { AuthContext } from "auth/auth-context";
+import { toast } from "react-toastify";
 
 const styles = {
   grid: {
@@ -87,7 +90,18 @@ const styles = {
 };
 
 const Problem = ({ prob, openModal }) => {
+  const { state } = useContext(AuthContext);
   const { name, description, details, companyName, companyLogo } = prob;
+  const handleRegistration = () => {
+    if (state.loggedIn) {
+      toast(
+        "Thank you for registering for our competition ! We will send further details of the competition by mail !."
+      );
+    } else {
+      openModal();
+    }
+  };
+
   return (
     <Grid sx={styles.grid}>
       <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
@@ -96,7 +110,11 @@ const Problem = ({ prob, openModal }) => {
             <Heading as="h2">{companyName}</Heading>
             <Image src={companyLogo} alt="company-logo" />
           </Box>
-          <Button variant="primary" onClick={openModal} sx={styles.register}>
+          <Button
+            variant="primary"
+            onClick={handleRegistration}
+            sx={styles.register}
+          >
             Register Now !
           </Button>
         </Box>

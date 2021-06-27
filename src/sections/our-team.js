@@ -90,12 +90,7 @@ const data = [
 
 const OurTeam = () => {
   const swiperRef = useRef(null);
-  const containerRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [containerOffset, setContainerOffset] = useState({
-    left: null,
-    top: null,
-  });
 
   const isEnd = swiperRef?.current?.swiper?.isEnd;
 
@@ -115,13 +110,6 @@ const OurTeam = () => {
 
     clearInterval();
   };
-
-  useEffect(() => {
-    setContainerOffset({
-      left: containerRef.current.offsetLeft,
-      top: containerRef.current.offsetTop,
-    });
-  }, [containerRef]);
 
   const breakpoints = {
     0: {
@@ -144,19 +132,14 @@ const OurTeam = () => {
 
   return (
     <Box as="section" id="team" sx={styles.section}>
-      <Container ref={containerRef}>
+      <Container>
         <SectionHeading
           sx={styles.heading}
           title="Meet our superheros"
           description="Here are dedicated team members behind Virsity"
         />
       </Container>
-      <Box
-        sx={{
-          ml: currentIndex === 0 ? containerOffset?.left : 0,
-          ...styles.teamWrapper,
-        }}
-      >
+      <Box sx={styles.teamWrapper}>
         {currentIndex !== 0 && (
           <button
             onClick={handlePrev}

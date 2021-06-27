@@ -1,10 +1,12 @@
-import React from "react";
-import LoginForm from "components/forms/LoginForm";
-import { useContext } from "react";
-import { Flex, Button } from "@theme-ui/components";
-import Modal from "react-modal";
+import { Button, Flex } from "@theme-ui/components";
 import { AuthContext } from "auth/auth-context";
+import LoginForm from "components/forms/LoginForm";
+import { NavLink } from "components/Link";
+import React, { useContext } from "react";
+import Modal from "react-modal";
 import { toast } from "react-toastify";
+import { auth, provider } from "../../firebase";
+import { scroller } from "react-scroll";
 
 function SignInButton({ inDrawer, openModal }) {
   return (
@@ -50,6 +52,14 @@ function GetStartedButton({ inDrawer }) {
   return (
     <Button
       variant="primary"
+      onClick={() =>
+        scroller.scrollTo("home", {
+          smooth: true,
+          spy: true,
+          offset: -70,
+          duration: 500,
+        })
+      }
       sx={
         inDrawer
           ? {
@@ -67,7 +77,7 @@ function GetStartedButton({ inDrawer }) {
 }
 
 function ButtonGroupNav({ inDrawer }) {
-  const [state, dispatch] = useContext(AuthContext);
+  const { state, dispatch } = useContext(AuthContext);
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   const openModal = () => setIsOpen(true);

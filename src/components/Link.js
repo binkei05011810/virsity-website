@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import NextLink from 'next/link';
-import { jsx, Link as A } from 'theme-ui';
-import { Link as MenuLink } from 'react-scroll';
-import { HiOutlineChevronRight } from 'react-icons/hi';
+import NextLink from "next/link";
+import { jsx, Link as A } from "theme-ui";
+import { Link as MenuLink } from "react-scroll";
+import { HiOutlineChevronRight } from "react-icons/hi";
 
 export function NavLink({ path, label, children, ...rest }) {
   return (
@@ -33,7 +33,7 @@ export function LearnMore({ path, label, children, ...rest }) {
   return (
     <NextLink href={path}>
       <A sx={styles.learnMore} {...rest}>
-        {label ?? 'Learn More'} <HiOutlineChevronRight />
+        {label ?? "Learn More"} <HiOutlineChevronRight />
       </A>
     </NextLink>
   );
@@ -41,18 +41,18 @@ export function LearnMore({ path, label, children, ...rest }) {
 
 const styles = {
   learnMore: {
-    color: 'link',
-    cursor: 'pointer',
+    color: "link",
+    cursor: "pointer",
     fontWeight: 500,
-    display: 'inline-flex',
-    alignItems: 'center',
+    display: "inline-flex",
+    alignItems: "center",
     svg: {
-      transition: 'margin-left 0.3s ease-in-out 0s',
-      ml: '3px',
+      transition: "margin-left 0.3s ease-in-out 0s",
+      ml: "3px",
     },
-    ':hover': {
+    ":hover": {
       svg: {
-        ml: '5px',
+        ml: "5px",
       },
     },
   },

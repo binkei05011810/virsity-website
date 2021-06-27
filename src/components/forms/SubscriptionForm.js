@@ -1,24 +1,23 @@
 /** @jsx jsx */
-import { jsx, Flex, Input, Button, Label, Radio } from "theme-ui";
-import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { Button, Flex, Input, jsx, Label } from "theme-ui";
 import { db } from "../../firebase";
 
 const SubscriptionForm = ({ ...props }) => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { isDirty, isValid, isSubmitSuccessful },
+  } = useForm();
 
-  const onSubmit = (e) => {
-    alert(JSON.stringify(e));
-    db.collection("emails")
-      .add({
-        email: e.email,
-      })
-      .then((docRef) => {
-        console.log("Document written with ID: ", docRef.id);
-      })
-      .catch((error) => {
-        console.error("Error adding document: ", error);
-      });
+  const onSubmit = async (e) => {
+    toast(
+      "Thanks you for subscribing! We will notify you with our latest updates asap! "
+    );
+    const docID = await db
+      .collection("subscribing-mails")
+      .add({ email: e.email });
   };
 
   return (
@@ -34,7 +33,11 @@ const SubscriptionForm = ({ ...props }) => {
         placeholder="Enter Email address"
         {...register("email")}
       />
-      <Button type="submit" variant="primary">
+      <Button
+        type="submit"
+        variant="primary"
+        disabled={!isDirty || !isValid || isSubmitSuccessful}
+      >
         Get Started
       </Button>
     </Flex>
