@@ -15,9 +15,7 @@ const SubscriptionForm = ({ ...props }) => {
     toast(
       "Thanks you for subscribing! We will notify you with our latest updates asap! "
     );
-    const docID = await db
-      .collection("subscribing-mails")
-      .add({ email: e.email });
+    const docID = await db.collection("subscriptions").add({ email: e.email });
   };
 
   return (
