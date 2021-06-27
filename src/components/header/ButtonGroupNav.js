@@ -4,8 +4,9 @@ import { useContext } from "react";
 import { Flex, Button } from "@theme-ui/components";
 import Modal from "react-modal";
 import { AuthContext } from "auth/auth-context";
+import { toast } from "react-toastify";
 
-function SignInButton({ openModal, inDrawer }) {
+function SignInButton({ inDrawer, openModal }) {
   return (
     <Button
       variant="white"
@@ -25,11 +26,11 @@ function SignInButton({ openModal, inDrawer }) {
   );
 }
 
-function LogOutButton({ dispatch, inDrawer }) {
+function LogOutButton({ inDrawer, logOut }) {
   return (
     <Button
       variant="white"
-      onClick={() => dispatch({ type: "logout" })}
+      onClick={logOut}
       sx={
         inDrawer
           ? {
@@ -66,15 +67,42 @@ function GetStartedButton({ inDrawer }) {
 }
 
 function ButtonGroupNav({ inDrawer }) {
-  const { state, dispatch } = useContext(AuthContext);
+  const [state, dispatch] = useContext(AuthContext);
   const [modalIsOpen, setIsOpen] = React.useState(false);
+
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
+
+  const logOut = () => dispatch({ type: "logout" });
+
+  const loginWithFacebook = () => {
+    /* Todo */
+  };
+
+  const loginWithGoogle = () => {
+    auth
+      .signInWithPopup(provider)
+      .then((result) => {
+        dispatch({
+          type: "login",
+          payload: {
+            credential: result.credential,
+            user: result.user,
+          },
+        });
+        closeModal();
+      })
+      .catch((error) => {
+        closeModal();
+        console.log(error);
+        toast("Oops, Failed to log you in.. 😅");
+      });
+  };
 
   return (
     <Flex sx={inDrawer ? { flexDirection: "column" } : null}>
       {state.loggedIn ? (
-        <LogOutButton inDrawer={inDrawer} dispatch={dispatch} />
+        <LogOutButton inDrawer={inDrawer} logOut={logOut} />
       ) : (
         <SignInButton inDrawer={inDrawer} openModal={openModal} />
       )}
@@ -87,7 +115,11 @@ function ButtonGroupNav({ inDrawer }) {
         onRequestClose={closeModal}
         preventScroll={true}
       >
-        <LoginForm />
+        <LoginForm
+          closeModal={closeModal}
+          loginWithGoogle={loginWithGoogle}
+          loginWithFacebook={loginWithFacebook}
+        />
       </Modal>
     </Flex>
   );

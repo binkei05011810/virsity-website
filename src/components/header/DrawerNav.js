@@ -3,7 +3,7 @@ import { jsx, Box, Image, Button, MenuButton } from "theme-ui";
 import React, { useContext } from "react";
 import { Link } from "react-scroll";
 import { rgba } from "polished";
-import { DrawerContext } from "contexts/drawer/drawer-context";
+import { DrawerContext } from "contexts/drawer-context";
 import Drawer from "components/Drawer";
 import Logo from "components/Logo";
 import menuItems from "./header.data";

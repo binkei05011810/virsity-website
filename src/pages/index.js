@@ -1,5 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "theme-ui";
+import { ToastContainer } from "react-toastify";
 import theme from "theme";
 import SEO from "components/SEO";
 import Layout from "components/Layout";
@@ -14,6 +15,17 @@ export default function IndexPage() {
   return (
     <AuthProvider>
       <ThemeProvider theme={theme}>
+        <ToastContainer
+          position="bottom-center"
+          autoClose={3000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
         <Layout>
           <SEO
             title="Virsity"

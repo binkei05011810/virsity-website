@@ -1,14 +1,13 @@
 /** @jsx jsx */
-import { jsx, Box, Container, Flex, Button, Text } from "theme-ui";
-import Sticky from "react-stickynode";
-import { useState } from "react";
-import { DrawerProvider } from "contexts/drawer/drawer-provider";
-import NavbarDrawer from "./DrawerNav";
 import { NavLink } from "components/Link";
-import menuItems from "./header.data";
 import Logo from "components/Logo";
-import Modal from "react-modal";
+import { DrawerProvider } from "contexts/drawer-context";
+import { useState } from "react";
+import Sticky from "react-stickynode";
+import { Box, Container, Flex, jsx } from "theme-ui";
 import ButtonGroupNav from "./ButtonGroupNav";
+import NavbarDrawer from "./DrawerNav";
+import menuItems from "./header.data";
 
 const styles = {
   headerWrapper: {

@@ -2,7 +2,7 @@
 import { useRef, useEffect, useState } from "react";
 import { rgba } from "polished";
 import { jsx, Box, Container } from "theme-ui";
-import Tabs, { TabPane } from "rc-tabs";
+import Tabs, { Tabane } from "rc-tabs";
 import TabTitle from "components/tabs/TabTitle";
 import TabContent from "components/tabs/TabContent";
 import Currency from "components/tabs/icons/currency";
@@ -11,6 +11,7 @@ import PieChart from "components/tabs/icons/pie-chart";
 import Suitcase from "components/tabs/icons/suitcase";
 import BarChart from "components/tabs/icons/bar-chart";
 import dashboard from "assets/images/dashboard.png";
+
 
 const data = [
   {

@@ -1,4 +1,4 @@
-import React, { Children, createContext, useReducer } from "react";
+import React, { createContext, useReducer } from "react";
 
 const initialState = {
   loggedIn: false,
@@ -9,10 +9,18 @@ const initialState = {
 function reducer(state, action) {
   switch (action.type) {
     case "login":
+      toast(`Hi ${action.payload.user.displayName} !😁`);
       return {
         loggedIn: true,
         credential: action.payload.credential,
         user: action.payload.user,
+      };
+    case "logout":
+      toast(`See you soon ${state.user.displayName}... 🥺`);
+      return {
+        loggedIn: false,
+        credential: null,
+        user: null,
       };
     default:
       return state;

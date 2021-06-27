@@ -1,5 +1,7 @@
-import React, { useReducer } from "react";
-import { DrawerContext } from "./drawer-context";
+import React, { useReducer, createContext } from "react";
+
+export const DrawerContext = createContext({});
+
 const initialState = {
   isOpen: false,
 };
@@ -15,6 +17,7 @@ function reducer(state, action) {
       return state;
   }
 }
+
 export const DrawerProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
