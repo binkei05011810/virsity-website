@@ -9,7 +9,10 @@ import Competition from "sections/competition";
 import AboutApp from "sections/about-app";
 import OurTeam from "sections/our-team";
 import Subscribe from "sections/subscribe";
+import Description from "sections/description";
 import AuthProvider from "auth/auth-context";
+import Digitalisation from "sections/digitalization";
+import WhatWeDo from "sections/what-we-do";
 
 export default function IndexPage() {
   return (
@@ -33,6 +36,8 @@ export default function IndexPage() {
           />
           <Banner />
           <Competition />
+          <Digitalisation />
+          <WhatWeDo />
           <AboutApp />
           <OurTeam />
           <Subscribe />

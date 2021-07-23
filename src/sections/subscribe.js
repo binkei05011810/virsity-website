@@ -11,7 +11,7 @@ const Subscribe = () => {
       <Container>
         <SectionHeading
           sx={styles.heading}
-          title="Subscribe to get notified about update"
+          title="Get in touch with our team today, and we will provide all the assistance you need to post your first challenge on Virsity."
           description="By subscribing with your mail, you will accept our privacy policy"
         />
         <ScrollAnimation animateIn="fadeIn" animateOnce={true} delay={500}>

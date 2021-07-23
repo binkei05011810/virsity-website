@@ -87,6 +87,18 @@ const styles = {
   register: {
     m: "30px auto",
   },
+  grid: {
+    alignItems: "center",
+    gridTemplateColumns: [
+      "1fr",
+      null,
+      null,
+      null,
+      "1fr 431px",
+      "1fr 530px",
+      "1fr 550px",
+    ],
+  },
 };
 
 const Problem = ({ prob, openModal }) => {

@@ -28,7 +28,7 @@ const SubscriptionForm = ({ ...props }) => {
       <Label variant="styles.srOnly">Email</Label>
       <Input
         type="email"
-        placeholder="Enter Email address"
+        placeholder="Enter your email address"
         {...register("email")}
       />
       <Button
